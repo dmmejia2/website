@@ -38,6 +38,18 @@ Artifacts go to `dist/` (any static host, or Vercel/Netlify with “static site�
 
 Submit builds a **mailto:** to `dmmejia2@utep.edu`.
 
-## GitHub Pages
+## Hosting
 
-If the site is not at the domain root, set `base` in `vite.config.ts` (for example `base: '/website/'` for repo `website`) and rebuild. This project currently uses `base: './'` which works for many static hosts; for GitHub **project** Pages you typically need `base: '/website/'` and deploy the contents of `dist/`.
+### GitHub Pages (this repo: `website`)
+
+1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to `main`; the workflow **Deploy to GitHub Pages** builds with `VITE_BASE=/website/` and publishes `dist/`.
+3. Site URL: `https://dmmejia2.github.io/website/` (adjust if you rename the repo).
+
+### Netlify / Vercel / Cloudflare Pages
+
+Connect the repo; set **build command** to `npm run build` and **publish directory** to `dist`. Do **not** set `VITE_BASE` (defaults to `./`), or set `VITE_BASE=/` for a root deploy.
+
+### Any static host
+
+Run `npm run build` and upload the `dist/` folder.
