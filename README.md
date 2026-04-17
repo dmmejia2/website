@@ -42,10 +42,14 @@ Submit builds a **mailto:** to `dmmejia2@utep.edu`.
 
 ### GitHub Pages (this repo: `website`)
 
-1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions** (not “Deploy from a branch,” or an old build will keep serving).
-2. First time: approve the **github-pages** environment if GitHub prompts for it (**Settings → Environments**).
-3. Push to `main` (or **Actions → Deploy to GitHub Pages → Run workflow**) to publish. Build uses `VITE_BASE=/website/`.
-4. Open **`https://dmmejia2.github.io/website/`** (include the `/website/` path). Hard-refresh (Shift+Reload) if you still see a cached page.
+The workflow pushes **`dist/`** to the **`gh-pages`** branch (no `deploy-pages` API — avoids404 if Actions wasn’t enabled as the Pages source).
+
+1. Push **`main`** (or run the workflow manually). Wait for a green run.
+2. **Settings → Pages → Build and deployment → Source: Deploy from a branch**
+3. **Branch:** `gh-pages` · **Folder:** `/ (root)` · Save.
+4. Site: **`https://dmmejia2.github.io/website/`** (path includes `/website/`). Hard-refresh if needed.
+
+If Actions can’t push: **Settings → Actions → General → Workflow permissions** → allow **Read and write**.
 
 ### Netlify / Vercel / Cloudflare Pages
 
