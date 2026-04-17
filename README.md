@@ -42,9 +42,10 @@ Submit builds a **mailto:** to `dmmejia2@utep.edu`.
 
 ### GitHub Pages (this repo: `website`)
 
-1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-2. Push to `main`; the workflow **Deploy to GitHub Pages** builds with `VITE_BASE=/website/` and publishes `dist/`.
-3. Site URL: `https://dmmejia2.github.io/website/` (adjust if you rename the repo).
+1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions** (not “Deploy from a branch,” or an old build will keep serving).
+2. First time: approve the **github-pages** environment if GitHub prompts for it (**Settings → Environments**).
+3. Push to `main` (or **Actions → Deploy to GitHub Pages → Run workflow**) to publish. Build uses `VITE_BASE=/website/`.
+4. Open **`https://dmmejia2.github.io/website/`** (include the `/website/` path). Hard-refresh (Shift+Reload) if you still see a cached page.
 
 ### Netlify / Vercel / Cloudflare Pages
 
