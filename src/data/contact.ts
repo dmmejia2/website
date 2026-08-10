@@ -38,8 +38,8 @@ export const contactLinks: ContactLink[] = [
     id: "scholar",
     kind: "scholar",
     label: "Google Scholar",
-    sublabel: "Publications — link coming soon",
-    href: "#",
-    active: false,
+    sublabel: "scholar.google.com · publications & citations",
+    href: "https://scholar.google.com/citations?user=SW0WAr4AAAAJ&hl=en",
+    active: true,
   },
 ];

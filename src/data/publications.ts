@@ -6,12 +6,12 @@ export interface Publication {
   href?: string;
 }
 
-/** Selected works aligned with CV (April 2026) — add DOI / ACM DL links in `href` when desired. */
+/** Selected works aligned with CV (April 2026). Add DOI / ACM DL links in `href` when desired. */
 export const publications: Publication[] = [
   {
     venue: "ITiCSE",
     year: "2026",
-    title: "Poster (accepted) — ITiCSE 2026",
+    title: "Poster (accepted), ITiCSE 2026",
     details:
       "Martinez, V., Salazar-Perez, M., & Mejía, D. · Proceedings of the 31st Annual ACM Conference on Innovation and Technology in Computer Science Education, Madrid, Spain · Universidad Rey Juan Carlos.",
   },

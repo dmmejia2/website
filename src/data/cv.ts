@@ -59,10 +59,10 @@ export const skills: string[] = [
   "Mixed-methods & learning analytics",
   "Knowledge graphs & semantic web",
   "Smart cities & mobility analytics",
-  "Python · Java · TensorFlow outreach",
+  "Curriculum design · MSSwE program leadership",
   "NSF & industry-sponsored research",
-  "Curriculum design · MSSE program leadership",
-  "Large-scale TA coordination & mentoring",
+  "Large-scale TA / peer-leader coordination",
+  "Faculty development · AI Champions",
 ];
 
 export const positions: CvPosition[] = [
@@ -71,41 +71,41 @@ export const positions: CvPosition[] = [
     period: "Sep 2024 – present",
     org: "Department of Computer Science · The University of Texas at El Paso",
     body:
-      "Teaches undergraduate and graduate CS courses (data structures, software engineering, professional development). Directs the M.S. in Software Engineering program. Conducts research on agile-centered software engineering education and project-based learning aligned with industry. Serves on department committees for fundamentals, software courses, and course scheduling.",
+      "High teaching load across undergraduate and graduate CS (Data Structures, Junior Professional Orientation, Applied Agile, SE Practicum, Intro CS). Directs the M.S. in Software Engineering. Leads IRB-approved research in agile SE and GenAI education; publishes at SIGCSE and ITiCSE. CAHSI GenAI Consortium Lead; AAII AI Champions under NSF Transformation Grant. Mentors graduate and undergraduate researchers each term. Serves on Fundamentals, Software Course, CQI (Lead), and Course Planning committees; CodePath liaison; Tech Enhanced Learning Advisory Board.",
   },
   {
     title: "Education, Workforce & Professional Development Lead",
     period: "Oct 2025 – present",
     org: "Institute for Applied AI Innovation (AAII) · UTEP",
     body:
-      "Leads educational and workforce initiatives in applied AI. CAHSI Lead for the GenAI in CS Education Consortium (Jul 2025 – present), coordinating generative-AI integration across CAHSI-affiliated institutions. Develops course modules and advocates for equitable, evidence-based AI adoption for historically underrepresented students.",
+      "Directs educational and workforce strategy for AAII. Leads AAII AI Champions (Apr 2026 – present), a university-wide faculty development program under the NSF Transformation Grant. CAHSI Lead for the GenAI in CS Education Consortium (Jul 2025 – present).",
   },
   {
     title: "Visiting Assistant Professor",
     period: "Sep 2020 – Aug 2024",
     org: "Department of Computer Science · UTEP",
     body:
-      "Delivered core CS instruction; developed the Applied Agile Software Engineering curriculum. Google Faculty in Residence and Academic Lead for the UTEP/Google Tech Exchange program. Co-led the UTEP/VISA Financial Literacy course development team.",
+      "Taught nine distinct CS courses; launched Applied Agile Software Development. UTEP Academic Lead for Google Tech Exchange; co-instructed Software Development Studio with Google engineers. Co-led UTEP/Visa Financial Literacy. Secured Google exploreCSR and TensorFlow awards totaling over $30,000.",
   },
   {
     title: "Laboratory & Research Coordinator / Lecturer",
     period: "Aug 2019 – Aug 2020",
     org: "Department of Computer Science · UTEP",
     body:
-      "Coordinated lab operations and CS fundamentals instruction. Supervised 50+ student instructional employees per semester and streamlined TA hiring.",
+      "Managed lab operations and CS fundamentals instruction. Recruited and supervised teaching assistants, instructional assistants, and peer leaders each semester. Primary MSCS academic advisor.",
   },
   {
     title: "Ph.D. Research Associate",
     period: "Aug 2016 – May 2019",
     org: "iLink Research Labs @ Cyber-ShARE · UTEP",
     body:
-      "Research in knowledge graphs, semantic web technologies, and data-driven composite metrics for smart-city traffic analysis.",
+      "Knowledge graphs and semantic web for composite metrics in smart-city traffic crash analysis; ISWC Doctoral Consortium and IEEE SmartWorld presentations.",
   },
   {
     title: "Associate Programmer",
     period: "Jul 2014 – Feb 2017",
     org: "GHG Corporation – Lockheed Martin / Leidos Storefront",
-    body: "Developed and maintained software systems in a defense contracting environment.",
+    body: "Mission-critical software in a defense contracting environment supporting Lockheed Martin and Leidos programs.",
   },
 ];
 
@@ -114,54 +114,83 @@ export const serviceEntries: ServiceEntry[] = [
     title: "Program Director, M.S. in Software Engineering",
     period: "Aug 2024 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Directs the MSSwE program for curriculum development and student success.",
+    body: "Curriculum, recruitment, accreditation preparation, and program learning outcomes.",
+  },
+  {
+    title: "Fast Track Advisor & Departmental Coordinator",
+    period: "2020 – present",
+    org: "Department of Computer Science · UTEP",
+    body: "Combined B.S./M.S. pathway; grew participation from ~5 to 30+ applicants per term.",
   },
   {
     title: "Graduate Student Coordinator / Assistant Graduate Program Director",
     period: "Aug 2019 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Graduate program data, Graduate School and College of Engineering collaboration; manages the Fast Track program.",
+    body: "Advises MSCS and MSDIS students; graduate program data; Graduate School and College of Engineering collaboration.",
   },
   {
-    title: "TA Coordinator",
+    title: "TA & Peer Leader Coordinator",
     period: "Aug 2019 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Supervises 50+ student employees per semester; coordinates assignments and hiring.",
+    body: "Supervises teaching assistants, instructional assistants, and peer leaders each semester; hiring and assignments.",
   },
   {
-    title: "Software Course Committee — Lead",
+    title: "CQI Committee, Lead, Software Engineering",
+    period: "Jan 2026 – present",
+    org: "Department of Computer Science · UTEP",
+    body: "Continuous quality improvement for software engineering course outcomes and accreditation alignment.",
+  },
+  {
+    title: "Software Course Committee, Lead",
     period: "Aug 2019 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Leads continuous improvement of software engineering course offerings.",
+    body: "Learning outcomes and industry-aligned updates for software-focused courses.",
   },
   {
     title: "Course Planning & Schedule Committee",
     period: "Aug 2020 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Develops the department master schedule.",
+    body: "Department master schedule across three terms per year.",
   },
   {
     title: "Fundamentals Course Committee",
     period: "Aug 2020 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Contributes to quality improvement of core CS courses.",
+    body: "Quality and alignment across foundational CS courses.",
   },
   {
-    title: "Tech Enhanced Learning Advisory Board — Member",
+    title: "Tech Enhanced Learning Advisory Board, Member",
     period: "Nov 2024 – present",
     org: "The University of Texas at El Paso",
     body: "University-wide board on technology integration in student learning.",
   },
   {
+    title: "Entering Engineering Committee, Member",
+    period: "May 2024 – Jan 2026",
+    org: "College of Engineering · UTEP",
+    body: "ENGR core course outcomes and curricular sequencing for entering engineering students.",
+  },
+  {
     title: "CodePath Institutional Liaison",
     period: "Jan 2025 – present",
-    org: "UTEP",
-    body: "Institutional partnership for industry-aligned computing pathways.",
+    org: "CodePath.org · UTEP",
+    body: "Industry-aligned technical education and career preparation pathways.",
   },
   {
     title: "Faculty Advisor, Coding Interview Club",
     period: "Jan 2025 – present",
     org: "UTEP Student Engagement & Leadership Center",
+  },
+  {
+    title: "Faculty Advisor, ACM Student Chapter",
+    period: "Aug 2022 – Jul 2025",
+    org: "UTEP Student Engagement & Leadership Center",
+  },
+  {
+    title: "Reviewer, ACM SIGCSE Technical Symposium",
+    period: "Present",
+    org: "ACM SIGCSE",
+    body: "Peer reviewer for computing education research submissions.",
   },
 ];
 
@@ -176,7 +205,7 @@ export const grants: GrantEntry[] = [
       "Scholars program enhancing career and academic pathways for academically talented students with financial need, leveraging CAHSI evidence-based practices.",
   },
   {
-    title: "Google Award — exploreCSR",
+    title: "Google Award: exploreCSR",
     period: "Sep 2021 – May 2022",
     org: "Google",
     role: "Principal Investigator",

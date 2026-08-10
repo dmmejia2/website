@@ -1,25 +1,23 @@
 import "./styles/main.css";
 import { courses } from "./data/courses";
-import { projects } from "./data/projects";
+import { impactInitiatives } from "./data/impact";
 import { publications } from "./data/publications";
 import { researchAreas } from "./data/research";
+import { activeStudies } from "./data/studies";
 import { cvPdfHref, education, grants, positions, serviceEntries, skills } from "./data/cv";
 import { contactLinks } from "./data/contact";
 
-const PAGE_SLUGS = ["home", "about", "teaching", "research", "projects", "cv", "contact"] as const;
+const PAGE_SLUGS = ["home", "about", "teaching", "research", "impact", "cv", "contact"] as const;
 type PageSlug = (typeof PAGE_SLUGS)[number];
 
-/** Hero tagline rotation (HTML is trusted; only <strong> used). */
-const HERO_DESC_BLURBS: string[] = [
-  "NSF S-STEM <strong>co-PI</strong> (~$4.98M, Sep 2022 – Aug 2028), <strong>PI</strong> on Google exploreCSR and TensorFlow awards, and <strong>CAHSI Lead</strong> for the GenAI in CS Education Consortium — connecting agile software engineering education, generative AI scholarship, and pathways for students at a Hispanic-Serving Institution.",
-  "I teach core CS from <strong>first-year computing</strong> through our software engineering practicum—data structures, agile development, and professional orientation. My research spans <strong>agile-centered software engineering education</strong>, <strong>generative AI</strong> in the classroom, and earlier smart-city / knowledge-graph scholarship from my graduate work.",
-  "I lead active <strong>PI-led studies</strong> on professional competencies in CS 4381, CS 5381, and CS 5389, and a UTEP <strong>generative AI</strong> study with M. Frias and N. Villanueva-Rosales. I am <strong>co-PI</strong> on NSF S-STEM with S. Salamah and M. Martin and was <strong>PI</strong> on Google exploreCSR ($24K) and TensorFlow ($6K) awards.",
-  "From 2020–2024 I was <strong>Visiting Assistant Professor</strong> at UTEP, where I developed the <strong>Applied Agile Software Engineering</strong> curriculum, served as <strong>Google Faculty in Residence</strong> and Academic Lead for UTEP/Google Tech Exchange, and co-led the UTEP/VISA Financial Literacy course team. Recent publications include <strong>SIGCSE and ITiCSE 2025</strong> on GenAI in software engineering; an ITiCSE 2026 poster is accepted. I am a triple UTEP alumnus (B.S. cum laude, M.S., Ph.D.).",
-  "I coordinate <strong>50+ teaching assistants</strong> each semester as TA Coordinator, support graduate programs including Fast Track, advise the Coding Interview Club, and serve as CodePath institutional liaison—alongside committee work from software-course leadership to the university Tech Enhanced Learning board. I care most about inclusive, industry-connected computing education at an <strong>HSI</strong> on the U.S.–Mexico border.",
-];
+/** Old hash redirects so bookmarked #projects still works. */
+const PAGE_ALIASES: Record<string, PageSlug> = {
+  projects: "impact",
+};
 
 function normalizePageSlug(raw: string): PageSlug {
   const s = raw.replace(/^#/, "").trim().toLowerCase();
+  if (s in PAGE_ALIASES) return PAGE_ALIASES[s]!;
   if ((PAGE_SLUGS as readonly string[]).includes(s)) return s as PageSlug;
   return "home";
 }
@@ -53,58 +51,45 @@ function renderCourses(): void {
   const root = document.getElementById("courses-grid");
   if (!root) return;
   root.innerHTML = courses
-    .map(
-      (c) => `
+    .map((c) => {
+      const timesLabel =
+        c.timesTaught === 1 ? "Taught 1 time" : `Taught ${c.timesTaught} times`;
+      const timesExtra = c.timesNote ? ` · ${escapeHtml(c.timesNote)}` : "";
+      return `
     <article class="course-card c-${c.accent} fade-up">
       <div class="course-code">${escapeHtml(c.code)}</div>
       <div class="course-name">${escapeHtml(c.title)}</div>
       <p class="course-desc">${escapeHtml(c.description)}</p>
-      <span class="course-level">${escapeHtml(c.level)}</span>
+      <div class="course-meta">
+        <span class="course-level">${escapeHtml(c.level)}</span>
+        <span class="course-times">${timesLabel}${timesExtra}</span>
+      </div>
     </article>
-  `,
-    )
+  `;
+    })
     .join("");
 }
 
-function renderProjects(): void {
-  const root = document.getElementById("projects-grid");
+function renderImpact(): void {
+  const root = document.getElementById("impact-list");
   if (!root) return;
-  const cards = projects.map((p) => {
-    const icon = `<div class="proj-icon" aria-hidden="true">${escapeHtml(p.icon)}</div>`;
-    const body = `
-      ${icon}
-      <h3>${escapeHtml(p.title)}</h3>
-      <p>${escapeHtml(p.description)}</p>
-    `;
-    if (p.status === "link" && p.href) {
-      const href = safeHref(p.href);
+  root.innerHTML = impactInitiatives
+    .map((item) => {
+      const link =
+        item.href && item.linkLabel
+          ? `<a class="impact-link" href="${escapeHtml(safeHref(item.href))}" rel="noopener noreferrer" target="_blank">${escapeHtml(item.linkLabel)} →</a>`
+          : "";
       return `
-        <a class="project-card fade-up" href="${escapeHtml(href)}" rel="noopener noreferrer" target="_blank">
-          ${body}
-          <div class="proj-footer">
-            <span class="proj-status live">${escapeHtml(p.linkLabel ?? "Open")}</span>
-            <div class="proj-arrow" aria-hidden="true">→</div>
-          </div>
-        </a>
-      `;
-    }
-    return `
-      <article class="project-card fade-up">
-        ${body}
-        <div class="proj-footer">
-          <span class="proj-status tba">Coming soon</span>
-          <div class="proj-arrow" aria-hidden="true">→</div>
-        </div>
+      <article class="impact-item fade-up">
+        <span class="impact-role">${escapeHtml(item.role)}</span>
+        <h3 class="impact-title">${escapeHtml(item.title)}</h3>
+        <p class="impact-summary">${escapeHtml(item.summary)}</p>
+        <p class="impact-outcomes">${escapeHtml(item.outcomes)}</p>
+        ${link}
       </article>
     `;
-  });
-  cards.push(`
-    <div class="project-card proj-add fade-up">
-      <div class="proj-add-icon" aria-hidden="true">+</div>
-      <div class="proj-add-text">More projects coming soon</div>
-    </div>
-  `);
-  root.innerHTML = cards.join("");
+    })
+    .join("");
 }
 
 function renderResearch(): void {
@@ -113,11 +98,31 @@ function renderResearch(): void {
   root.innerHTML = researchAreas
     .map(
       (r) => `
-    <div class="r-card fade-up">
+    <article class="r-card fade-up">
       <h3>${escapeHtml(r.title)}</h3>
+      <p class="r-agenda">${escapeHtml(r.agenda)}</p>
       <p>${escapeHtml(r.description)}</p>
       <div class="r-tags">${r.tags.map((t) => `<span class="r-tag">${escapeHtml(t)}</span>`).join("")}</div>
-    </div>
+    </article>
+  `,
+    )
+    .join("");
+}
+
+function renderStudies(): void {
+  const root = document.getElementById("studies-list");
+  if (!root) return;
+  root.innerHTML = activeStudies
+    .map(
+      (s) => `
+    <article class="study-item fade-up">
+      <div class="study-meta">
+        <span class="study-role">${escapeHtml(s.role)}</span>
+        <span class="study-period">${escapeHtml(s.period)}</span>
+      </div>
+      <h3 class="study-title">${escapeHtml(s.title)}</h3>
+      <p class="study-summary">${escapeHtml(s.summary)}</p>
+    </article>
   `,
     )
     .join("");
@@ -132,7 +137,7 @@ function renderPublications(): void {
       const titleInner = pubHref
         ? `<a class="pub-title pub-title-link" href="${escapeHtml(pubHref)}" rel="noopener noreferrer" target="_blank">${escapeHtml(pub.title)}</a>`
         : `<div class="pub-title">${escapeHtml(pub.title)}</div>`;
-      const badge = escapeHtml(pub.venue).replace(/\s+/g, "<br />");
+      const badge = escapeHtml(`${pub.venue} ${pub.year}`);
       return `
       <article class="pub-item fade-up">
         <div class="pub-badge">${badge}</div>
@@ -151,11 +156,11 @@ function iconSvg(kind: string): string {
     case "email":
       return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>`;
     case "linkedin":
-      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-5 14h-2v-6H8v-2h4V9a4 4 0 0 1 4-4h2v2h-2a2 2 0 0 0-2 2v2h4l-1 2h-3v6z"/></svg>`;
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>`;
     case "github":
-      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>`;
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>`;
     case "scholar":
-      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" opacity="0.9" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15v-4H7l5-8v4h4l-5 8z"/></svg>`;
+      return `<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 0 0-7 7h14a7 7 0 0 0-7-7z"/></svg>`;
     default:
       return "";
   }
@@ -409,57 +414,9 @@ function setupNav(): void {
   });
 }
 
-function setupContactForm(): void {
-  const form = document.getElementById("contact-form") as HTMLFormElement | null;
-  const note = document.getElementById("form-note");
-  if (!form || !note) return;
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const fd = new FormData(form);
-    const name = String(fd.get("name") ?? "").trim();
-    const email = String(fd.get("email") ?? "").trim();
-    const role = String(fd.get("role") ?? "");
-    const message = String(fd.get("message") ?? "").trim();
-    if (!name || !email || !message) {
-      note.textContent = "Please fill in name, email, and message.";
-      return;
-    }
-    const subject = encodeURIComponent(`Website inquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nI am: ${role}\n\n${message}\n`);
-    note.textContent = "Opening your email app…";
-    window.location.href = `mailto:dmmejia2@utep.edu?subject=${subject}&body=${body}`;
-  });
-}
-
 function setFooterYear(): void {
   const el = document.getElementById("footer-year");
   if (el) el.textContent = String(new Date().getFullYear());
-}
-
-function setupHeroDescRotation(): void {
-  const inner = document.getElementById("hero-desc-inner");
-  if (!inner || HERO_DESC_BLURBS.length < 2) return;
-
-  const prefersReduced =
-    typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (prefersReduced) return;
-
-  inner.innerHTML = HERO_DESC_BLURBS[0];
-  let i = 0;
-  const intervalMs = 6500;
-  const fadeMs = 400;
-
-  const step = (): void => {
-    inner.classList.add("is-out");
-    window.setTimeout(() => {
-      i = (i + 1) % HERO_DESC_BLURBS.length;
-      inner.innerHTML = HERO_DESC_BLURBS[i];
-      inner.classList.remove("is-out");
-    }, fadeMs);
-  };
-
-  window.setInterval(step, intervalMs);
 }
 
 function setupBackToTop(): void {
@@ -486,14 +443,13 @@ function setupBackToTop(): void {
 }
 
 renderCourses();
-renderProjects();
+renderImpact();
 renderResearch();
+renderStudies();
 renderPublications();
 renderCv();
 renderContactLinks();
 setupNav();
 setupPageRouter();
-setupContactForm();
 setFooterYear();
 setupBackToTop();
-setupHeroDescRotation();

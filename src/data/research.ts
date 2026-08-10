@@ -1,5 +1,6 @@
 export interface ResearchArea {
   title: string;
+  agenda: string;
   description: string;
   tags: string[];
 }
@@ -7,26 +8,34 @@ export interface ResearchArea {
 export const researchAreas: ResearchArea[] = [
   {
     title: "Agile Software Engineering & Professional Competencies",
+    agenda:
+      "IRB-approved studies of sprint-based courses, client projects, and professional readiness, including responsible AI-assisted development.",
     description:
-      "Principal investigator on the Agile Experience Study (Mar 2026 – May 2027): mixed-methods, longitudinal work in CS 4381, CS 5381, and CS 5389 tracking how students develop professional engineering competencies across sprint cycles—linking GitHub artifacts, self-efficacy, and readiness for responsible AI-assisted development. Complements the broader project on project-based learning and agile methodologies in the classroom (Jan 2023 – Aug 2026).",
-    tags: ["Agile Experience Study", "Mixed methods", "SE practicum"],
+      "Applied Agile Software Engineering and the Software Engineering Practicum are sites of longitudinal study: self-efficacy, signals from GitHub and course deliverables, and readiness across a semester. Graduate students in Applied Agile also produce pedagogy research evaluated by the department. Published work at ITiCSE and SIGCSE.",
+    tags: ["Agile pedagogy", "Professional readiness", "Client projects"],
   },
   {
     title: "Generative AI in Computer Science Education",
+    agenda:
+      "Pre/post surveys and course data on perceptions, behaviors, and learning outcomes when GenAI tools are integrated into CS coursework at UTEP.",
     description:
-      "PI on Understanding Generative AI in Computer Science Courses (Sep 2025 – Aug 2027, with M. Frias and N. Villanueva-Rosales): surveys and course data on student perceptions, behaviors, and outcomes with GenAI at UTEP, with emphasis on underrepresented students. UTEP faculty sponsor on the Google Tech Exchange Software Developer Studio study (2024; PI J. Gorson Benario), which supported SIGCSE and ITiCSE 2025 publications.",
+      "Active IRB study with M. Frias and N. Villanueva-Rosales, with attention to underrepresented students in computing. Related dissemination through SIGCSE, ITiCSE, Google Tech Exchange collaboration, and the CAHSI GenAI in CS Education Consortium.",
     tags: ["GenAI pedagogy", "HSI context", "SIGCSE · ITiCSE"],
   },
   {
     title: "Knowledge Graphs, Semantics & Smart Cities",
+    agenda:
+      "Dissertation and IEEE-track scholarship on knowledge-graph methodologies and composite metrics for traffic crash analysis and smart mobility.",
     description:
-      "Dissertation and IEEE-track scholarship on bottom-up knowledge-graph methodologies, heterogeneous traffic data, and composite metrics for crash observability and smart mobility—foundational to data-driven urban computing lines.",
+      "Ph.D. work on bottom-up knowledge graphs for composite metric development applied to traffic crashes in Texas; M.S. thesis on heterogeneous traffic data for mobility challenges in El Paso. Foundational to later data-driven education research.",
     tags: ["Knowledge graphs", "IEEE ISC2", "Smart mobility"],
   },
   {
-    title: "Pathways, Equity & Scale at an HSI",
+    title: "Pathways & Scale at an HSI",
+    agenda:
+      "NSF S-STEM co-PI work, Google exploreCSR and TensorFlow awards, and CAHSI GenAI Consortium leadership.",
     description:
-      "Co-PI on NSF S-STEM (~$4.98M, Sep 2022 – Aug 2028, with S. Salamah and M. Martin); PI on Google exploreCSR and TensorFlow awards. CAHSI Lead for the GenAI in CS Education Consortium (Jul 2025 – present). Links external funding to mentoring, TA coordination, and evidence-based instruction for Hispanic-Serving Institution students.",
+      "Funded programs and cross-institutional networks that connect mentoring infrastructure and classroom research so practices tested at UTEP can travel to peer institutions.",
     tags: ["NSF S-STEM", "CAHSI", "Google awards"],
   },
 ];
