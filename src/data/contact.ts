@@ -1,5 +1,35 @@
 export type ContactKind = "email" | "linkedin" | "github" | "scholar";
 
+export type ContactAudience = "students" | "collaborators" | "partners";
+
+export interface ContactAudienceOption {
+  id: ContactAudience;
+  label: string;
+  subject: string;
+  hint: string;
+}
+
+export const contactAudiences: ContactAudienceOption[] = [
+  {
+    id: "students",
+    label: "Students",
+    subject: "Student inquiry",
+    hint: "Course questions, MSSwE or Fast Track advising. Include course and term.",
+  },
+  {
+    id: "collaborators",
+    label: "Collaborators",
+    subject: "Research / collaboration",
+    hint: "Research partnership, IRB studies, and computing-education scholarship.",
+  },
+  {
+    id: "partners",
+    label: "Partners",
+    subject: "Partnership inquiry",
+    hint: "Industry or consortium conversations around curriculum, workforce, and GenAI.",
+  },
+];
+
 export interface ContactLink {
   id: string;
   kind: ContactKind;

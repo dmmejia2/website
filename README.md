@@ -28,7 +28,9 @@ Artifacts go to `dist/` (any static host, or Vercel/Netlify with â€œstatic siteâ
 | `src/data/publications.ts` | Publications list: optional `href` per row for DOI / ACM DL |
 | `src/data/research.ts` | Research areas: agenda question + description + tags |
 | `src/data/cv.ts` | Education, skills, positions, grants; `cvPdfHref` for PDF |
-| `src/data/contact.ts` | Contact rows: set `active: true` and real `href` when ready |
+| `src/data/now.ts` | Dated updates (home preview + `#updates`) |
+| `src/data/students.ts` | Office hours + advising pathways |
+| `src/data/contact.ts` | Contact rows and form audiences |
 
 ## Assets
 

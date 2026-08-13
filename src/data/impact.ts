@@ -115,3 +115,18 @@ export const impactInitiatives: ImpactInitiative[] = [
     linkLabel: "Open app",
   },
 ];
+
+export interface PartnerMark {
+  name: string;
+  line: string;
+}
+
+/** Typeset partner names for the Impact scale strip. */
+export const partnerMarks: PartnerMark[] = [
+  { name: "CAHSI", line: "GenAI curriculum across ~20 institutions" },
+  { name: "NSF", line: "$4.98M S-STEM Co-PI through 2028" },
+  { name: "Google", line: "Tech Exchange academic lead · HBCU/HSI studio" },
+  { name: "AAII", line: "University-wide AI Champions faculty program" },
+  { name: "VISA", line: "Financial literacy built with CS students" },
+  { name: "ACM", line: "SIGCSE · ITiCSE computing education" },
+];

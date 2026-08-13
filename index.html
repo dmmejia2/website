@@ -14,9 +14,59 @@
       content="Assistant Professor of Instruction at UTEP. MSSwE Program Director; AAII Education Lead; CAHSI Lead for GenAI in CS Education; NSF S-STEM co-PI."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dmmejia2.github.io/website/" />
     <meta property="og:image" content="https://dmmejia2.github.io/website/daniel-mejia-headshot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Daniel M. Mejia, Ph.D. | UTEP Computer Science" />
+    <meta
+      name="twitter:description"
+      content="Assistant Professor of Instruction at UTEP. MSSwE Program Director; AAII Education Lead; CAHSI Lead for GenAI in CS Education; NSF S-STEM co-PI."
+    />
+    <meta name="twitter:image" content="https://dmmejia2.github.io/website/daniel-mejia-headshot.png" />
+    <link rel="canonical" href="https://dmmejia2.github.io/website/" />
     <meta name="theme-color" content="#1b3a6e" />
     <title>Daniel M. Mejia, Ph.D. | UTEP Computer Science</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://dmmejia2.github.io/website/#person",
+            "name": "Daniel M. Mejia",
+            "honorificSuffix": "Ph.D.",
+            "jobTitle": "Assistant Professor of Instruction",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "The University of Texas at El Paso",
+              "department": "Department of Computer Science"
+            },
+            "url": "https://dmmejia2.github.io/website/",
+            "email": "mailto:dmmejia2@utep.edu",
+            "image": "https://dmmejia2.github.io/website/daniel-mejia-headshot.png",
+            "sameAs": [
+              "https://www.linkedin.com/in/dmmejia2",
+              "https://github.com/dmmejia2",
+              "https://scholar.google.com/citations?user=SW0WAr4AAAAJ&hl=en"
+            ]
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Bridging Academia and Industry: Leveraging Generative AI in a Software Engineering Course for Practical Industry Experiences",
+            "author": { "@id": "https://dmmejia2.github.io/website/#person" },
+            "datePublished": "2025",
+            "url": "https://doi.org/10.1145/3724363.3729036"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Unlocking Potential with Generative AI Instruction: Investigating Mid-level Software Development Student Perceptions, Behavior, and Adoption",
+            "author": { "@id": "https://dmmejia2.github.io/website/#person" },
+            "datePublished": "2025",
+            "url": "https://doi.org/10.1145/3641554.3701859"
+          }
+        ]
+      }
+    </script>
     <script>
       (function () {
         try {
@@ -42,6 +92,7 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    <div class="visually-hidden" id="route-live" aria-live="polite" aria-atomic="true"></div>
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
     <div class="nav-overlay" id="nav-overlay" hidden aria-hidden="true"></div>
 
@@ -53,6 +104,30 @@
         <div class="nav-drawer" id="nav-drawer">
           <ul class="nav-links" id="nav-links">
             <li><a href="#home" data-page="home">Home</a></li>
+            <li class="nav-item-dd">
+              <a href="#teaching/start" data-page="teaching" class="nav-students-link">Students</a>
+              <button
+                type="button"
+                class="nav-dd-toggle"
+                id="nav-students-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="nav-students-menu"
+                aria-label="Students menu"
+              >
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </button>
+              <ul class="nav-dd" id="nav-students-menu" role="menu">
+                <li role="none"><a href="#teaching/start" data-page="teaching" role="menuitem">Start here</a></li>
+                <li role="none"><a href="#teaching/start" data-page="teaching" data-scroll="current-courses" role="menuitem">Fall 2026 courses</a></li>
+                <li role="none"><a href="#teaching/start" data-page="teaching" data-scroll="advising-heading" role="menuitem">Advising</a></li>
+                <li role="none">
+                  <a href="https://attendance-tracker-live.web.app/" rel="noopener noreferrer" target="_blank" role="menuitem">Attendance Tracker</a>
+                </li>
+              </ul>
+            </li>
             <li><a href="#about" data-page="about">About</a></li>
             <li><a href="#teaching" data-page="teaching">Teaching</a></li>
             <li><a href="#research" data-page="research">Research</a></li>
@@ -117,17 +192,11 @@
                 Education Lead, Institute for Applied AI Innovation · CAHSI Lead, GenAI in CS Education Consortium
               </p>
               <div class="hero-actions">
-                <a href="#teaching" class="btn btn-primary" data-page="teaching">Teaching &amp; programs</a>
+                <a href="#teaching/start" class="btn btn-primary" data-page="teaching">If you’re a student, start here</a>
                 <a href="#contact" class="btn btn-ghost" data-page="contact">Get in touch</a>
               </div>
-              <ul class="hero-signals" aria-label="Highlights">
-                <li><strong data-count="3726" data-format="int">3,726</strong> students since 2019</li>
-                <li><strong data-count="4.98" data-prefix="$" data-suffix="M" data-decimals="2">$4.98M</strong> NSF S-STEM Co-PI</li>
-                <li><strong>ACM</strong> SIGCSE · ITiCSE</li>
-              </ul>
             </div>
             <aside class="hero-visual hero-stagger" aria-label="Portrait">
-              <div class="hero-shape" aria-hidden="true"></div>
               <div class="hero-portrait">
                 <img
                   class="hero-photo"
@@ -137,22 +206,20 @@
                   fetchpriority="high"
                   decoding="async"
                   alt="Daniel M. Mejia, Ph.D."
+                  onerror="this.onerror=null;this.src='./placeholder-avatar.svg'"
                 />
               </div>
             </aside>
           </div>
-        </section>
-
-        <section class="affiliations" aria-label="Affiliations and partners">
-          <div class="container affiliations-track">
-            <span>UTEP CS</span>
-            <span>NSF S-STEM</span>
-            <span>Google</span>
-            <span>CAHSI</span>
-            <span>AAII</span>
-            <span>ACM SIGCSE</span>
-            <span>VISA</span>
-            <span>IEEE</span>
+          <div class="hero-mast">
+            <ul class="hero-signals" aria-label="Highlights">
+              <li><strong data-count="3726" data-format="int">3,726</strong> students since 2019</li>
+              <li><strong data-count="4.98" data-prefix="$" data-suffix="M" data-decimals="2">$4.98M</strong> NSF S-STEM Co-PI</li>
+              <li><strong>ACM</strong> SIGCSE · ITiCSE</li>
+            </ul>
+            <p class="hero-affiliations">UTEP CS · NSF S-STEM · Google · CAHSI · AAII · ACM SIGCSE · VISA · IEEE</p>
+            <div class="hero-featured" id="now-preview"></div>
+            <div class="home-load" id="home-load-viz" aria-label="Teaching load"></div>
           </div>
         </section>
 
@@ -166,9 +233,9 @@
             <div class="doorway-list">
               <a href="#teaching" class="doorway fade-up" data-page="teaching">
                 <span class="doorway-num" aria-hidden="true">01</span>
-                <span class="doorway-audience">Students</span>
-                <span class="doorway-title">Teaching &amp; programs</span>
-                <span class="doorway-desc">Philosophy, courses, MSSwE, Fast Track, and advising.</span>
+                <span class="doorway-audience">Colleagues</span>
+                <span class="doorway-title">Teaching philosophy &amp; catalog</span>
+                <span class="doorway-desc">How I teach, courses as instructor of record, and MSSwE.</span>
                 <span class="doorway-arrow" aria-hidden="true">→</span>
               </a>
               <a href="#research" class="doorway fade-up" data-page="research">
@@ -186,6 +253,24 @@
                 <span class="doorway-arrow" aria-hidden="true">→</span>
               </a>
             </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Updates -->
+      <div id="page-updates" class="page" role="region" aria-label="Updates" hidden>
+        <section id="updates" aria-labelledby="updates-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Updates</p>
+              <h2 class="page-title" id="updates-heading">Recent <em>work</em></h2>
+              <p class="page-lede">
+                Conferences, programs, and studies—dated so the site is not a frozen brochure. A handful of updates a year, not a blog.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <div class="now-feed" id="now-feed"></div>
           </div>
         </section>
       </div>
@@ -268,15 +353,87 @@
         </section>
       </div>
 
+      <!-- Students -->
+      <div id="page-students" class="page" role="region" aria-label="Students" hidden>
+        <section id="students" aria-labelledby="students-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Fall 2026</p>
+              <h2 class="page-title" id="students-heading">Courses, hours &amp; <em>advising</em></h2>
+              <p class="page-lede">
+                Fall 2026 course sites, office hours, and how to reach me.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <p class="eyebrow">This term</p>
+            <h3 class="section-title" id="current-courses">Current courses</h3>
+            <p class="section-lead">Open a course for the syllabus, schedule, and materials as they are posted.</p>
+            <div class="current-courses" id="current-courses-grid"></div>
+
+            <div class="student-start fade-up" id="student-start">
+              <div class="student-start-grid">
+                <aside class="hours-card" id="office-hours-card" data-office-hours aria-label="Office hours"></aside>
+                <div class="student-jumps">
+                  <a class="student-jump" href="#teaching/start" data-page="teaching" data-scroll="current-courses">Course sites</a>
+                  <a class="student-jump" href="#teaching/start" data-page="teaching" data-scroll="advising-heading">Advising form</a>
+                  <a class="student-jump" href="https://attendance-tracker-live.web.app/" rel="noopener noreferrer" target="_blank">Attendance Tracker</a>
+                  <a class="student-jump" href="#contact" data-page="contact">Email</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="student-support fade-up" id="advising">
+              <h3 class="block-title" id="advising-heading">Advising and student pathways</h3>
+              <ul class="support-list">
+                <li>
+                  <strong>Fast Track</strong>: Combined B.S./M.S. pathway; advising on planning and applications.
+                </li>
+                <li>
+                  <strong>MSSwE / graduate advising</strong>: Program questions for Software Engineering; also MSCS / MSDIS coordination.
+                </li>
+                <li>
+                  <strong>TA, IA &amp; Peer Leader roles</strong>: Hiring and assignments for the department’s instructional student staff each term.
+                </li>
+                <li>
+                  <strong>Coding Interview Club</strong>: Faculty advisor (SEL Center).
+                </li>
+                <li>
+                  <strong>CodePath</strong>: Campus liaison for industry-aligned technical courses and career preparation.
+                </li>
+                <li>
+                  <strong>Research mentoring</strong>: Undergraduate and master’s research mentees each term.
+                </li>
+              </ul>
+              <form class="intake-form" id="advising-form">
+                <p class="intake-label">Don’t invent the ask—pick a path and I’ll get a prefilled email.</p>
+                <div class="intake-row">
+                  <label class="visually-hidden" for="advising-path">Pathway</label>
+                  <select id="advising-path" name="pathway" required></select>
+                  <label class="visually-hidden" for="advising-name">Your name</label>
+                  <input id="advising-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                </div>
+                <label class="visually-hidden" for="advising-note">What you need</label>
+                <textarea id="advising-note" name="note" rows="3" placeholder="Course, term, and what you need (one or two sentences)." required></textarea>
+                <button type="submit" class="btn btn-primary">Open email to Dr. Mejia</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+
       <!-- Teaching -->
       <div id="page-teaching" class="page" role="region" aria-label="Teaching" hidden>
         <section id="teaching" aria-labelledby="teaching-heading">
           <div class="page-header">
             <div class="container page-header-inner">
               <p class="eyebrow">Teaching</p>
-              <h2 class="page-title" id="teaching-heading">Teaching philosophy, courses &amp; <em>student pathways</em></h2>
+              <h2 class="page-title" id="teaching-heading">Teaching philosophy, catalog &amp; <em>programs</em></h2>
               <p class="page-lede">
-                How I approach instruction, the courses I teach, and advising for MSSwE, Fast Track, and related student opportunities.
+                How I teach, the courses I have led as instructor of record, and the M.S. in Software Engineering.
+              </p>
+              <p class="term-line">
+                Current term: <a href="#teaching/start" data-page="teaching">Fall 2026 course sites</a>
               </p>
             </div>
           </div>
@@ -323,10 +480,11 @@
             </div>
 
             <p class="eyebrow fade-up" style="margin-top: 2.5rem">Courses</p>
-            <h3 class="section-title fade-up">Course catalog</h3>
+            <h3 class="section-title fade-up" id="courses-heading">Course catalog</h3>
             <p class="section-lead fade-up">
-              Courses taught as instructor of record since Fall 2019. “Times taught” indicates how many terms each has been offered.
+              Instructor of record since Fall 2019. Current-term sites are linked where a Fall 2026 page exists. Bars show lecture sections taught.
             </p>
+            <div class="load-viz fade-up" id="load-viz" aria-label="Teaching load by course"></div>
             <div class="courses-grid" id="courses-grid"></div>
 
             <div class="program-block fade-up">
@@ -334,7 +492,8 @@
               <p>
                 As Program Director for UTEP’s M.S. in Software Engineering, I oversee curriculum, recruitment, academic
                 planning, and accreditation preparation. Students considering the graduate program or the Fast Track
-                combined B.S./M.S. pathway should begin with the catalog and then contact me for advising. Fast Track
+                combined B.S./M.S. pathway should begin with the catalog and then
+                <a href="#teaching/start" data-page="teaching" data-scroll="advising-heading">contact me for advising</a>. Fast Track
                 participation has grown from roughly five applicants per term to more than thirty.
               </p>
               <a
@@ -344,32 +503,13 @@
                 target="_blank"
               >MSSwE graduate catalog →</a>
             </div>
-
-            <div class="student-support fade-up">
-              <h3 class="block-title">Advising and student pathways</h3>
-              <ul class="support-list">
-                <li>
-                  <strong>Fast Track</strong>: Combined B.S./M.S. pathway; advising on planning and applications.
-                </li>
-                <li>
-                  <strong>MSSwE / graduate advising</strong>: Program questions for Software Engineering; also MSCS / MSDIS coordination.
-                </li>
-                <li>
-                  <strong>TA, IA &amp; Peer Leader roles</strong>: Hiring and assignments for the department’s instructional student staff each term.
-                </li>
-                <li>
-                  <strong>Coding Interview Club</strong>: Faculty advisor (SEL Center).
-                </li>
-                <li>
-                  <strong>CodePath</strong>: Campus liaison for industry-aligned technical courses and career preparation.
-                </li>
-                <li>
-                  <strong>Research mentoring</strong>: Undergraduate and master’s research mentees each term.
-                </li>
-              </ul>
-            </div>
           </div>
         </section>
+      </div>
+
+      <!-- Course site -->
+      <div id="page-course" class="page" role="region" aria-label="Course" hidden>
+        <div id="course-site-root"></div>
       </div>
 
       <!-- Research -->
@@ -423,6 +563,7 @@
                 target="_blank"
               >Google Scholar →</a>
             </p>
+            <div class="pub-filters fade-up" id="pub-filters" role="group" aria-label="Filter publications"></div>
             <div class="pub-list fade-up" id="publications-list"></div>
           </div>
         </section>
@@ -466,6 +607,7 @@
                 university, and national level.
               </p>
             </div>
+            <div class="partner-strip fade-up" id="partner-strip" aria-label="Partners and scale"></div>
             <div class="impact-list" id="impact-list"></div>
             <div class="impact-tools" id="impact-tools" hidden>
               <h3 class="block-title">Teaching tools</h3>
@@ -510,7 +652,7 @@
                 <ul class="contact-audiences">
                   <li>
                     <strong>Students</strong>
-                    — Course questions, MSSwE or Fast Track advising. Include course and term in the subject line.
+                    — Course questions, MSSwE or Fast Track advising. Include course and term in the subject line—or use the form.
                   </li>
                   <li>
                     <strong>Collaborators</strong>
@@ -521,6 +663,18 @@
                     — Industry or consortium conversations around curriculum, workforce, and GenAI readiness.
                   </li>
                 </ul>
+                <form class="contact-form" id="contact-form">
+                  <p class="intake-label">Opens a prefilled email in your client. Nothing is stored on this site.</p>
+                  <label class="field-label" for="contact-audience">I am</label>
+                  <select id="contact-audience" name="audience" required></select>
+                  <label class="field-label" for="contact-name">Name</label>
+                  <input id="contact-name" name="name" type="text" autocomplete="name" required />
+                  <label class="field-label" for="contact-from">Your email</label>
+                  <input id="contact-from" name="from" type="email" autocomplete="email" required />
+                  <label class="field-label" for="contact-message">Message</label>
+                  <textarea id="contact-message" name="message" rows="5" required></textarea>
+                  <button type="submit" class="btn btn-primary">Open email</button>
+                </form>
               </div>
               <div class="c-links fade-up" id="contact-links-root"></div>
             </div>
@@ -540,6 +694,7 @@
         <a class="footer-brand" href="#home" data-page="home">Daniel M. Mejia, Ph.D.</a>
         <nav class="footer-nav" aria-label="Footer">
           <a href="#home" data-page="home">Home</a>
+          <a href="#teaching/start" data-page="teaching">Students</a>
           <a href="#about" data-page="about">About</a>
           <a href="#teaching" data-page="teaching">Teaching</a>
           <a href="#research" data-page="research">Research</a>
