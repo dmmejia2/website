@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Daniel M. Mejia, Ph.D. | Assistant Professor of Instruction at UTEP. Program Director, M.S. Software Engineering; AAII Education Lead; CAHSI Lead for GenAI in CS Education; NSF S-STEM co-PI. Research in agile SE education and generative AI."
+    />
+    <meta property="og:title" content="Daniel M. Mejia, Ph.D. | UTEP Computer Science" />
+    <meta
+      property="og:description"
+      content="Assistant Professor of Instruction at UTEP. MSSwE Program Director; AAII Education Lead; CAHSI Lead for GenAI in CS Education; NSF S-STEM co-PI."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dmmejia2.github.io/website/" />
+    <meta property="og:image" content="https://dmmejia2.github.io/website/daniel-mejia-headshot.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Daniel M. Mejia, Ph.D. | UTEP Computer Science" />
+    <meta
+      name="twitter:description"
+      content="Assistant Professor of Instruction at UTEP. MSSwE Program Director; AAII Education Lead; CAHSI Lead for GenAI in CS Education; NSF S-STEM co-PI."
+    />
+    <meta name="twitter:image" content="https://dmmejia2.github.io/website/daniel-mejia-headshot.png" />
+    <link rel="canonical" href="https://dmmejia2.github.io/website/" />
+    <meta name="theme-color" content="#1b3a6e" />
+    <title>Daniel M. Mejia, Ph.D. | UTEP Computer Science</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://dmmejia2.github.io/website/#person",
+            "name": "Daniel M. Mejia",
+            "honorificSuffix": "Ph.D.",
+            "jobTitle": "Assistant Professor of Instruction",
+            "affiliation": {
+              "@type": "CollegeOrUniversity",
+              "name": "The University of Texas at El Paso",
+              "department": "Department of Computer Science"
+            },
+            "url": "https://dmmejia2.github.io/website/",
+            "email": "mailto:dmmejia2@utep.edu",
+            "image": "https://dmmejia2.github.io/website/daniel-mejia-headshot.png",
+            "sameAs": [
+              "https://www.linkedin.com/in/dmmejia2",
+              "https://github.com/dmmejia2",
+              "https://scholar.google.com/citations?user=SW0WAr4AAAAJ&hl=en"
+            ]
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Bridging Academia and Industry: Leveraging Generative AI in a Software Engineering Course for Practical Industry Experiences",
+            "author": { "@id": "https://dmmejia2.github.io/website/#person" },
+            "datePublished": "2025",
+            "url": "https://doi.org/10.1145/3724363.3729036"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Unlocking Potential with Generative AI Instruction: Investigating Mid-level Software Development Student Perceptions, Behavior, and Adoption",
+            "author": { "@id": "https://dmmejia2.github.io/website/#person" },
+            "datePublished": "2025",
+            "url": "https://doi.org/10.1145/3641554.3701859"
+          }
+        ]
+      }
+    </script>
+    <script>
+      (function () {
+        try {
+          var stored = localStorage.getItem("dmmejia-theme");
+          var theme =
+            stored === "light" || stored === "dark"
+              ? stored
+              : window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light";
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {
+          document.documentElement.setAttribute("data-theme", "light");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/website/assets/index-DxZxo5-u.js"></script>
+    <link rel="stylesheet" crossorigin href="/website/assets/index-3WKtGz4m.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="visually-hidden" id="route-live" aria-live="polite" aria-atomic="true"></div>
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="nav-overlay" id="nav-overlay" hidden aria-hidden="true"></div>
+
+    <nav id="navbar" class="nav" aria-label="Primary">
+      <div class="nav-inner">
+        <a class="nav-brand" href="#home" data-page="home">
+          Daniel M. <em>Mejia</em>, Ph.D.
+        </a>
+        <div class="nav-drawer" id="nav-drawer">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#home" data-page="home">Home</a></li>
+            <li class="nav-item-dd">
+              <a href="#teaching/start" data-page="teaching" class="nav-students-link">Students</a>
+              <button
+                type="button"
+                class="nav-dd-toggle"
+                id="nav-students-toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="nav-students-menu"
+                aria-label="Students menu"
+              >
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
+                  <path d="M2 4l4 4 4-4" />
+                </svg>
+              </button>
+              <ul class="nav-dd" id="nav-students-menu" role="menu">
+                <li role="none"><a href="#teaching/start" data-page="teaching" role="menuitem">Start here</a></li>
+                <li role="none"><a href="#teaching/start" data-page="teaching" data-scroll="current-courses" role="menuitem">Fall 2026 courses</a></li>
+                <li role="none"><a href="#teaching/start" data-page="teaching" data-scroll="advising-heading" role="menuitem">Advising</a></li>
+                <li role="none">
+                  <a href="https://attendance-tracker-live.web.app/" rel="noopener noreferrer" target="_blank" role="menuitem">Attendance Tracker</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#about" data-page="about">About</a></li>
+            <li><a href="#teaching" data-page="teaching">Teaching</a></li>
+            <li><a href="#research" data-page="research">Research</a></li>
+            <li><a href="#impact" data-page="impact">Impact</a></li>
+            <li><a href="#cv" data-page="cv">CV</a></li>
+            <li><a href="#contact" data-page="contact" class="nav-cta">Contact</a></li>
+          </ul>
+        </div>
+        <div class="nav-tools">
+          <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode" title="Dark mode">
+            <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 14.3A8.5 8.5 0 1 1 9.7 3 7 7 0 0 0 21 14.3z" />
+            </svg>
+            <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            class="nav-toggle"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-controls="nav-drawer"
+            aria-label="Open menu"
+          >
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+            <span class="nav-toggle-bar" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main">
+      <!-- Home -->
+      <div id="page-home" class="page is-active" role="region" aria-label="Home">
+        <section id="hero" class="hero" aria-labelledby="hero-heading">
+          <div class="hero-atmosphere" aria-hidden="true">
+            <span class="hero-blob hero-blob-a"></span>
+            <span class="hero-blob hero-blob-b"></span>
+            <span class="hero-blob hero-blob-c"></span>
+            <span class="hero-watermark">UTEP</span>
+          </div>
+          <div class="hero-inner">
+            <div class="hero-copy hero-stagger">
+              <p class="hero-eyebrow">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                The University of Texas at El Paso · Department of Computer Science
+              </p>
+              <h1 class="hero-name" id="hero-heading">
+                <span class="hero-name-first">Daniel&nbsp;M.</span>
+                <span class="hero-name-last">Mejia<span class="hero-credential">,&nbsp;Ph.D.</span></span>
+              </h1>
+              <p class="hero-line">
+                Building student capacity through teaching, program leadership, and scholarship of teaching at UTEP.
+              </p>
+              <p class="hero-support">
+                Assistant Professor of Instruction · Program Director, M.S. Software Engineering
+              </p>
+              <p class="hero-support hero-support-secondary">
+                Education Lead, Institute for Applied AI Innovation · CAHSI Lead, GenAI in CS Education Consortium
+              </p>
+              <div class="hero-actions">
+                <a href="#teaching/start" class="btn btn-primary" data-page="teaching">If you’re a student, start here</a>
+                <a href="#contact" class="btn btn-ghost" data-page="contact">Get in touch</a>
+              </div>
+            </div>
+            <aside class="hero-visual hero-stagger" aria-label="Portrait">
+              <div class="hero-portrait">
+                <img
+                  class="hero-photo"
+                  src="./daniel-mejia-headshot.png"
+                  width="500"
+                  height="625"
+                  fetchpriority="high"
+                  decoding="async"
+                  alt="Daniel M. Mejia, Ph.D."
+                  onerror="this.onerror=null;this.src='./placeholder-avatar.svg'"
+                />
+              </div>
+            </aside>
+          </div>
+          <div class="hero-mast">
+            <ul class="hero-signals" aria-label="Highlights">
+              <li><strong data-count="3726" data-format="int">3,726</strong> students since 2019</li>
+              <li><strong data-count="4.98" data-prefix="$" data-suffix="M" data-decimals="2">$4.98M</strong> NSF S-STEM Co-PI</li>
+              <li><strong>ACM</strong> SIGCSE · ITiCSE</li>
+            </ul>
+            <p class="hero-affiliations">UTEP CS · NSF S-STEM · Google · CAHSI · AAII · ACM SIGCSE · VISA · IEEE</p>
+            <div class="hero-featured" id="now-preview"></div>
+            <div class="home-load" id="home-load-viz" aria-label="Teaching load"></div>
+          </div>
+        </section>
+
+        <section class="doorways" aria-labelledby="doorways-heading">
+          <div class="container">
+            <div class="doorways-head">
+              <p class="eyebrow">Explore</p>
+              <h2 class="doorways-heading" id="doorways-heading">Where to begin</h2>
+              <p class="doorways-lede">Teaching, research, and program leadership — pick the path that fits.</p>
+            </div>
+            <div class="doorway-list">
+              <a href="#teaching" class="doorway fade-up" data-page="teaching">
+                <span class="doorway-num" aria-hidden="true">01</span>
+                <span class="doorway-audience">Colleagues</span>
+                <span class="doorway-title">Teaching philosophy &amp; catalog</span>
+                <span class="doorway-desc">How I teach, courses as instructor of record, and MSSwE.</span>
+                <span class="doorway-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#research" class="doorway fade-up" data-page="research">
+                <span class="doorway-num" aria-hidden="true">02</span>
+                <span class="doorway-audience">Collaborators</span>
+                <span class="doorway-title">Research &amp; publications</span>
+                <span class="doorway-desc">IRB studies, GenAI pedagogy, and selected papers.</span>
+                <span class="doorway-arrow" aria-hidden="true">→</span>
+              </a>
+              <a href="#impact" class="doorway fade-up" data-page="impact">
+                <span class="doorway-num" aria-hidden="true">03</span>
+                <span class="doorway-audience">Partners</span>
+                <span class="doorway-title">Impact &amp; initiatives</span>
+                <span class="doorway-desc">AI Champions, CAHSI, NSF S-STEM, Google, and VISA.</span>
+                <span class="doorway-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Updates -->
+      <div id="page-updates" class="page" role="region" aria-label="Updates" hidden>
+        <section id="updates" aria-labelledby="updates-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Updates</p>
+              <h2 class="page-title" id="updates-heading">Recent <em>work</em></h2>
+              <p class="page-lede">
+                Conferences, programs, and studies—dated so the site is not a frozen brochure. A handful of updates a year, not a blog.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <div class="now-feed" id="now-feed"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- About -->
+      <div id="page-about" class="page" role="region" aria-label="About" hidden>
+        <section id="about" aria-labelledby="about-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">About</p>
+              <h2 class="page-title" id="about-heading">Assistant Professor of Instruction · <em>UTEP Computer Science</em></h2>
+              <p class="page-lede">
+                Born and raised in El Paso. B.S., M.S., and Ph.D. in Computer Science, all at UTEP—the students I teach today are students I recognize from my own path.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block about-layout">
+            <div class="about-narrative fade-up">
+              <p>
+                I am an Assistant Professor of Instruction in the Department of Computer Science at The University of
+                Texas at El Paso. I direct the M.S. in Software Engineering program, lead education and workforce work for
+                the Institute for Applied AI Innovation—including the university-wide AI Champions faculty program—and
+                serve as CAHSI Lead for the GenAI in CS Education Consortium. My assigned work is teaching and service;
+                alongside it I sustain a scholarship of teaching agenda grounded in what I see in the classroom.
+              </p>
+              <p>
+                Since Fall 2019 I have taught 3,726 students across 56 sections and 10 courses, from the introductory CS
+                sequence through graduate software engineering. In that time I contributed to modernizing the CS1 through
+                CS3 sequence and built two courses from the ground up: Applied Agile Software Engineering and Fundamentals
+                of Financial Literacy, the latter with VISA. Beginning Fall 2023 I became the sole instructor of record for
+                CS 1301 amid a faculty shortage, absorbing growth from roughly 45 students per section to over 200 without
+                the course going unstaffed.
+              </p>
+              <p>
+                The questions I ask in class now inform a published research agenda: agile software engineering pedagogy
+                and generative AI in CS education at SIGCSE and ITiCSE, with ongoing IRB studies and NSF S-STEM work
+                supporting pathways for students with financial need. Closing the gap between what the classroom teaches
+                and what industry requires connects my teaching, my research, and my leadership—toward genuine access to
+                an excellent computer science education, not just a seat in a classroom.
+              </p>
+              <div class="about-tags">
+                <span class="tag">Generative AI</span>
+                <span class="tag">Software Engineering</span>
+                <span class="tag">CS Education</span>
+                <span class="tag">Workforce Development</span>
+                <span class="tag">Hispanic-Serving Institution</span>
+                <span class="tag">UTEP Alumnus</span>
+              </div>
+            </div>
+            <aside class="about-timeline fade-up" aria-label="Role timeline">
+              <h3 class="timeline-heading">Roles</h3>
+              <ol class="timeline">
+                <li>
+                  <span class="timeline-when">Apr 2026 – present</span>
+                  <span class="timeline-what">Program Lead · AAII AI Champions</span>
+                </li>
+                <li>
+                  <span class="timeline-when">Oct 2025 – present</span>
+                  <span class="timeline-what">Education Lead · AAII</span>
+                </li>
+                <li>
+                  <span class="timeline-when">Jul 2025 – present</span>
+                  <span class="timeline-what">CAHSI Lead · GenAI in CS Education Consortium</span>
+                </li>
+                <li>
+                  <span class="timeline-when">Sep 2024 – present</span>
+                  <span class="timeline-what">Assistant Professor of Instruction · UTEP CS</span>
+                </li>
+                <li>
+                  <span class="timeline-when">Aug 2024 – present</span>
+                  <span class="timeline-what">Program Director · MSSwE</span>
+                </li>
+                <li>
+                  <span class="timeline-when">2020 – 2024</span>
+                  <span class="timeline-what">Visiting Assistant Professor · UTEP CS</span>
+                </li>
+              </ol>
+            </aside>
+          </div>
+        </section>
+      </div>
+
+      <!-- Students -->
+      <div id="page-students" class="page" role="region" aria-label="Students" hidden>
+        <section id="students" aria-labelledby="students-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Fall 2026</p>
+              <h2 class="page-title" id="students-heading">Courses, hours &amp; <em>advising</em></h2>
+              <p class="page-lede">
+                Fall 2026 course sites, office hours, and how to reach me.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <p class="eyebrow">This term</p>
+            <h3 class="section-title" id="current-courses">Current courses</h3>
+            <p class="section-lead">Open a course for the syllabus, schedule, and materials as they are posted.</p>
+            <div class="current-courses" id="current-courses-grid"></div>
+
+            <div class="student-start fade-up" id="student-start">
+              <div class="student-start-grid">
+                <aside class="hours-card" id="office-hours-card" data-office-hours aria-label="Office hours"></aside>
+                <div class="student-jumps">
+                  <a class="student-jump" href="#teaching/start" data-page="teaching" data-scroll="current-courses">Course sites</a>
+                  <a class="student-jump" href="#teaching/start" data-page="teaching" data-scroll="advising-heading">Advising form</a>
+                  <a class="student-jump" href="https://attendance-tracker-live.web.app/" rel="noopener noreferrer" target="_blank">Attendance Tracker</a>
+                  <a class="student-jump" href="#contact" data-page="contact">Email</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="student-support fade-up" id="advising">
+              <h3 class="block-title" id="advising-heading">Advising and student pathways</h3>
+              <ul class="support-list">
+                <li>
+                  <strong>Fast Track</strong>: Combined B.S./M.S. pathway; advising on planning and applications.
+                </li>
+                <li>
+                  <strong>MSSwE / graduate advising</strong>: Program questions for Software Engineering; also MSCS / MSDIS coordination.
+                </li>
+                <li>
+                  <strong>TA, IA &amp; Peer Leader roles</strong>: Hiring and assignments for the department’s instructional student staff each term.
+                </li>
+                <li>
+                  <strong>Coding Interview Club</strong>: Faculty advisor (SEL Center).
+                </li>
+                <li>
+                  <strong>CodePath</strong>: Campus liaison for industry-aligned technical courses and career preparation.
+                </li>
+                <li>
+                  <strong>Research mentoring</strong>: Undergraduate and master’s research mentees each term.
+                </li>
+              </ul>
+              <form class="intake-form" id="advising-form">
+                <p class="intake-label">Don’t invent the ask—pick a path and I’ll get a prefilled email.</p>
+                <div class="intake-row">
+                  <label class="visually-hidden" for="advising-path">Pathway</label>
+                  <select id="advising-path" name="pathway" required></select>
+                  <label class="visually-hidden" for="advising-name">Your name</label>
+                  <input id="advising-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                </div>
+                <label class="visually-hidden" for="advising-note">What you need</label>
+                <textarea id="advising-note" name="note" rows="3" placeholder="Course, term, and what you need (one or two sentences)." required></textarea>
+                <button type="submit" class="btn btn-primary">Open email to Dr. Mejia</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Teaching -->
+      <div id="page-teaching" class="page" role="region" aria-label="Teaching" hidden>
+        <section id="teaching" aria-labelledby="teaching-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Teaching</p>
+              <h2 class="page-title" id="teaching-heading">Teaching philosophy, catalog &amp; <em>programs</em></h2>
+              <p class="page-lede">
+                How I teach, the courses I have led as instructor of record, and the M.S. in Software Engineering.
+              </p>
+              <p class="term-line">
+                Current term: <a href="#teaching/start" data-page="teaching">Fall 2026 course sites</a>
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <div class="philosophy fade-up">
+              <h3 class="block-title">Teaching philosophy</h3>
+              <p>
+                The greatest impact a teacher can have is not only to teach the student, but to build the student’s own
+                capacity to succeed. My commitment began in a single class session covering for my advisor as a graduate
+                student—the joy of watching students learn from words I spoke—and that is when I knew teaching, not
+                industry, was where I wanted to build a career. Many of my students come from backgrounds and a culture
+                similar to my own. I know first-hand what it is like to enter a first computer science class knowing
+                nothing about the field, and to still feel there is more to learn upon completing a graduate degree. When
+                I look at my students, I often see a version of myself.
+              </p>
+              <p>
+                I do not define student success by grades alone. For one student, success is understanding a difficult topic
+                for the first time; for another, an internship, a research paper, a scholarship, graduation, graduate school,
+                or a role where they are genuinely happy. My role is to meet students where they are and help them grow from
+                that point, even when they do not yet see their own potential. CS 2302, Data Structures, is both the course
+                I most enjoy teaching and the course I find hardest to teach well: it often determines whether a student
+                stays in the major, and students arrive with widely different preparation. Closing that gap within a single
+                semester, without losing those who arrive furthest behind, is where meeting students where they are becomes
+                daily practice.
+              </p>
+              <p>
+                Two components sit at the core of how I teach: engagement and humanity. Engagement through activities,
+                delivery, and sustained interaction keeps students curious. Humanity means letting students see that I am
+                still learning, making mistakes, and growing alongside them. Students learn through different modalities—visuals,
+                problem solving, storytelling, live coding, reflection—and I weave several into a session so no single group
+                is left behind. Practice is critical; the struggle of difficult material is real and necessary. My role is not
+                to remove that struggle, but to make sure no student faces it alone, and that every student who leaves feels
+                prepared for what comes next.
+              </p>
+              <p>
+                In class I use a see-one, do-one, teach-one progression: a worked example with common pitfalls, then practice,
+                then—in select units—students teaching the idea back. I emphasize the why behind a concept, not only the how,
+                so students can adapt when the problem changes. Every lecture is recorded to Blackboard alongside walkthrough
+                videos, a practice I kept after student feedback. With generative AI, I ask students to identify the problem,
+                pinpoint where they are stuck, and attempt improvement on their own before prompting a model—mastery first,
+                then AI as a tool used ethically, not a substitute. Closing the classroom–industry gap drives Applied Agile
+                Software Engineering and partnerships with Google and VISA.
+              </p>
+            </div>
+
+            <p class="eyebrow fade-up" style="margin-top: 2.5rem">Courses</p>
+            <h3 class="section-title fade-up" id="courses-heading">Course catalog</h3>
+            <p class="section-lead fade-up">
+              Instructor of record since Fall 2019. Current-term sites are linked where a Fall 2026 page exists. Bars show lecture sections taught.
+            </p>
+            <div class="load-viz fade-up" id="load-viz" aria-label="Teaching load by course"></div>
+            <div class="courses-grid" id="courses-grid"></div>
+
+            <div class="program-block fade-up">
+              <h3 class="block-title">M.S. in Software Engineering (MSSwE)</h3>
+              <p>
+                As Program Director for UTEP’s M.S. in Software Engineering, I oversee curriculum, recruitment, academic
+                planning, and accreditation preparation. Students considering the graduate program or the Fast Track
+                combined B.S./M.S. pathway should begin with the catalog and then
+                <a href="#teaching/start" data-page="teaching" data-scroll="advising-heading">contact me for advising</a>. Fast Track
+                participation has grown from roughly five applicants per term to more than thirty.
+              </p>
+              <a
+                class="text-link"
+                href="https://catalog.utep.edu/grad/college-of-engineering/computer-science/software-engineering/"
+                rel="noopener noreferrer"
+                target="_blank"
+              >MSSwE graduate catalog →</a>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Course site -->
+      <div id="page-course" class="page" role="region" aria-label="Course" hidden>
+        <div id="course-site-root"></div>
+      </div>
+
+      <!-- Research -->
+      <div id="page-research" class="page" role="region" aria-label="Research" hidden>
+        <section id="research" aria-labelledby="research-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Research</p>
+              <h2 class="page-title" id="research-heading">Research &amp; <em>publications</em></h2>
+              <p class="page-lede">
+                Agile software engineering pedagogy, generative AI in CS education, and earlier work in knowledge graphs and smart mobility.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <div class="philosophy fade-up">
+              <h3 class="block-title">Philosophy</h3>
+              <p>
+                My research exists because our department, like many computer science departments, has at times taught
+                agile software engineering using methods that no longer reflect how the industry actually works. It is the
+                same gap I hear from former students returning from internships: how much they had to learn on the job that
+                could have been taught, and taught well, in the classroom. Understanding how to teach industry-standard
+                practices as a core part of preparing students for professional roles—not as an afterthought—is critical.
+              </p>
+              <p>
+                Teaching and research inform each other continuously. That is most visible with generative AI: what I observe
+                students doing with these tools shapes the questions I ask in research, and what the research finds shapes how
+                I teach the next semester. Classroom methodologies are formalized through publications at SIGCSE and ITiCSE
+                so they can be examined and adopted more broadly. Through CAHSI, those techniques extend across the network;
+                partnerships with Google and VISA keep a direct line between academia and industry.
+              </p>
+            </div>
+
+            <p class="eyebrow fade-up">Focus areas</p>
+            <h3 class="section-title fade-up">Research <em>agenda</em></h3>
+            <div class="research-areas" id="research-grid"></div>
+
+            <p class="eyebrow fade-up" style="margin-top: 3rem">Active studies</p>
+            <h3 class="section-title fade-up">IRB &amp; sponsored work</h3>
+            <div class="studies-list" id="studies-list"></div>
+
+            <p class="eyebrow fade-up" style="margin-top: 3rem">Publications</p>
+            <h3 class="section-title fade-up">Selected <em>papers</em></h3>
+            <p class="section-lead fade-up">
+              Peer-reviewed work in computing education and earlier smart-cities scholarship.
+              <a
+                class="text-link"
+                style="display: inline; margin: 0"
+                href="https://scholar.google.com/citations?user=SW0WAr4AAAAJ&amp;hl=en"
+                rel="noopener noreferrer"
+                target="_blank"
+              >Google Scholar →</a>
+            </p>
+            <div class="pub-filters fade-up" id="pub-filters" role="group" aria-label="Filter publications"></div>
+            <div class="pub-list fade-up" id="publications-list"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Impact -->
+      <div id="page-impact" class="page" role="region" aria-label="Impact" hidden>
+        <section id="impact" aria-labelledby="impact-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Impact</p>
+              <h2 class="page-title" id="impact-heading">Programs, partnerships &amp; <em>leadership</em></h2>
+              <p class="page-lede">
+                Department, campus, consortium, and industry roles that support the same students I teach.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <div class="philosophy fade-up">
+              <h3 class="block-title">Approach</h3>
+              <p>
+                My leadership grew out of a straightforward instinct: when something needs work, I want to fix it, and I want
+                it to run efficiently once fixed. That instinct took me from the classroom into Program Director of the M.S.
+                in Software Engineering, CAHSI Lead for the GenAI in CS Education Consortium, Education Lead for the Institute
+                for Applied AI Innovation, and related roles. Each serves the same students I have taught for years, aimed at
+                giving twenty-first-century students genuine access to an excellent computer science education—not just a seat
+                in a classroom.
+              </p>
+              <p>
+                Standard-setting, role modeling, and direct communication define how I lead. Where it makes sense, I work
+                through initiatives with the people involved; where it does not, I delegate and trust those I have prepared.
+                I build structures that outlast a single semester—a TA hiring pipeline, an attendance-tracking tool, a
+                graduation-tracking system—so the work keeps running when I am not the one holding it. Sometimes leadership
+                is simply showing up: when a faculty shortage left CS 1301 without enough instructors, I took on sole
+                responsibility rather than let the department’s largest gateway course go understaffed.
+              </p>
+              <p>
+                My filter for new commitments is the impact of the work against what I can realistically contribute given
+                existing responsibilities. That filter led me to the MSSwE directorship: proof that I can build and lead a
+                program at the departmental level, and a foundation for the same kind of leadership at the college,
+                university, and national level.
+              </p>
+            </div>
+            <div class="partner-strip fade-up" id="partner-strip" aria-label="Partners and scale"></div>
+            <div class="impact-list" id="impact-list"></div>
+            <div class="impact-tools" id="impact-tools" hidden>
+              <h3 class="block-title">Teaching tools</h3>
+              <div class="impact-tools-list" id="impact-tools-list"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- CV -->
+      <div id="page-cv" class="page" role="region" aria-label="Curriculum vitae" hidden>
+        <section id="cv" aria-labelledby="cv-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Curriculum Vitae</p>
+              <h2 class="page-title" id="cv-heading">Education, experience, service &amp; <em>grants</em></h2>
+              <p class="page-lede">Structured summary aligned with the July 2026 CV. Download the full PDF anytime.</p>
+            </div>
+          </div>
+          <div class="container section-block">
+            <div class="cv-layout fade-up" id="cv-layout-root"></div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Contact -->
+      <div id="page-contact" class="page" role="region" aria-label="Contact" hidden>
+        <section id="contact" aria-labelledby="contact-heading">
+          <div class="page-header">
+            <div class="container page-header-inner">
+              <p class="eyebrow">Contact</p>
+              <h2 class="page-title" id="contact-heading">Get in <em>touch</em></h2>
+              <p class="page-lede">
+                Email is the fastest path for students, collaborators, and industry partners.
+              </p>
+            </div>
+          </div>
+          <div class="container section-block contact-section">
+            <div class="contact-layout">
+              <div class="contact-intro fade-up">
+                <p class="contact-headline">UTEP email &amp; <em>profiles</em></p>
+                <ul class="contact-audiences">
+                  <li>
+                    <strong>Students</strong>
+                    — Course questions, MSSwE or Fast Track advising. Include course and term in the subject line—or use the form.
+                  </li>
+                  <li>
+                    <strong>Collaborators</strong>
+                    — Research partnership, IRB studies, and computing-education scholarship.
+                  </li>
+                  <li>
+                    <strong>Partners</strong>
+                    — Industry or consortium conversations around curriculum, workforce, and GenAI readiness.
+                  </li>
+                </ul>
+                <form class="contact-form" id="contact-form">
+                  <p class="intake-label">Opens a prefilled email in your client. Nothing is stored on this site.</p>
+                  <label class="field-label" for="contact-audience">I am</label>
+                  <select id="contact-audience" name="audience" required></select>
+                  <label class="field-label" for="contact-name">Name</label>
+                  <input id="contact-name" name="name" type="text" autocomplete="name" required />
+                  <label class="field-label" for="contact-from">Your email</label>
+                  <input id="contact-from" name="from" type="email" autocomplete="email" required />
+                  <label class="field-label" for="contact-message">Message</label>
+                  <textarea id="contact-message" name="message" rows="5" required></textarea>
+                  <button type="submit" class="btn btn-primary">Open email</button>
+                </form>
+              </div>
+              <div class="c-links fade-up" id="contact-links-root"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <button type="button" class="back-to-top" id="back-to-top" aria-label="Back to top" hidden>
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 19V5M5 12l7-7 7 7" />
+      </svg>
+    </button>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="footer-brand" href="#home" data-page="home">Daniel M. Mejia, Ph.D.</a>
+        <nav class="footer-nav" aria-label="Footer">
+          <a href="#home" data-page="home">Home</a>
+          <a href="#teaching/start" data-page="teaching">Students</a>
+          <a href="#about" data-page="about">About</a>
+          <a href="#teaching" data-page="teaching">Teaching</a>
+          <a href="#research" data-page="research">Research</a>
+          <a href="#impact" data-page="impact">Impact</a>
+          <a href="#cv" data-page="cv">CV</a>
+          <a href="#contact" data-page="contact">Contact</a>
+        </nav>
+        <p class="footer-copy">© <span id="footer-year">2026</span> Daniel Mejia · El Paso, TX</p>
+      </div>
+    </footer>
+
+  </body>
+</html>
