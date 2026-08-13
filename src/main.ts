@@ -4,7 +4,15 @@ import { impactInitiatives } from "./data/impact";
 import { publications } from "./data/publications";
 import { researchAreas } from "./data/research";
 import { activeStudies } from "./data/studies";
-import { cvPdfHref, education, grants, positions, serviceEntries, skills } from "./data/cv";
+import {
+  cvPdfHref,
+  education,
+  externalServiceEntries,
+  grants,
+  positions,
+  serviceEntries,
+  skills,
+} from "./data/cv";
 import { contactLinks } from "./data/contact";
 
 const PAGE_SLUGS = ["home", "about", "teaching", "research", "impact", "cv", "contact"] as const;
@@ -70,17 +78,14 @@ function renderCourses(): void {
     .join("");
 }
 
-function renderImpact(): void {
-  const root = document.getElementById("impact-list");
-  if (!root) return;
-  root.innerHTML = impactInitiatives
-    .map((item) => {
-      const link =
-        item.href && item.linkLabel
-          ? `<a class="impact-link" href="${escapeHtml(safeHref(item.href))}" rel="noopener noreferrer" target="_blank">${escapeHtml(item.linkLabel)} →</a>`
-          : "";
-      return `
-      <article class="impact-item fade-up">
+function impactArticleHtml(item: (typeof impactInitiatives)[number], extraClass = ""): string {
+  const link =
+    item.href && item.linkLabel
+      ? `<a class="impact-link" href="${escapeHtml(safeHref(item.href))}" rel="noopener noreferrer" target="_blank">${escapeHtml(item.linkLabel)} →</a>`
+      : "";
+  const featured = item.tier === "featured" ? " impact-item--featured" : "";
+  return `
+      <article class="impact-item${featured}${extraClass ? ` ${extraClass}` : ""} fade-up">
         <span class="impact-role">${escapeHtml(item.role)}</span>
         <h3 class="impact-title">${escapeHtml(item.title)}</h3>
         <p class="impact-summary">${escapeHtml(item.summary)}</p>
@@ -88,8 +93,38 @@ function renderImpact(): void {
         ${link}
       </article>
     `;
-    })
-    .join("");
+}
+
+function renderImpact(): void {
+  const root = document.getElementById("impact-list");
+  const toolsWrap = document.getElementById("impact-tools");
+  const toolsList = document.getElementById("impact-tools-list");
+  if (!root) return;
+
+  const main = impactInitiatives.filter((i) => (i.tier ?? "standard") !== "tool");
+  const tools = impactInitiatives.filter((i) => i.tier === "tool");
+
+  const featured = main.filter((i) => i.tier === "featured");
+  const rest = main.filter((i) => i.tier !== "featured");
+
+  const featuredHtml = featured.length
+    ? `<div class="impact-featured">${featured.map((item) => impactArticleHtml(item)).join("")}</div>`
+    : "";
+  const restHtml = rest.length
+    ? `<div class="impact-rest">${rest.map((item) => impactArticleHtml(item)).join("")}</div>`
+    : "";
+
+  root.innerHTML = `${featuredHtml}${restHtml}`;
+
+  if (toolsWrap && toolsList) {
+    if (tools.length) {
+      toolsWrap.hidden = false;
+      toolsList.innerHTML = tools.map((item) => impactArticleHtml(item, "impact-item--tool")).join("");
+    } else {
+      toolsWrap.hidden = true;
+      toolsList.innerHTML = "";
+    }
+  }
 }
 
 function renderResearch(): void {
@@ -136,15 +171,15 @@ function renderPublications(): void {
       const pubHref = pub.href ? safeHref(pub.href) : "";
       const titleInner = pubHref
         ? `<a class="pub-title pub-title-link" href="${escapeHtml(pubHref)}" rel="noopener noreferrer" target="_blank">${escapeHtml(pub.title)}</a>`
-        : `<div class="pub-title">${escapeHtml(pub.title)}</div>`;
-      const badge = escapeHtml(`${pub.venue} ${pub.year}`);
+        : `<span class="pub-title">${escapeHtml(pub.title)}</span>`;
       return `
       <article class="pub-item fade-up">
-        <div class="pub-badge">${badge}</div>
-        <div>
-          ${titleInner}
-          <div class="pub-meta">${escapeHtml(pub.details)}</div>
+        <div class="pub-meta-line">
+          <span class="pub-venue">${escapeHtml(pub.venue)}</span>
+          <span class="pub-year">${escapeHtml(pub.year)}</span>
         </div>
+        ${titleInner}
+        <div class="pub-details">${escapeHtml(pub.details)}</div>
       </article>
     `;
     })
@@ -223,9 +258,10 @@ function renderCv(): void {
     )
     .join("");
 
-  const serviceHtml = serviceEntries
-    .map(
-      (s) => `
+  const renderService = (entries: typeof serviceEntries) =>
+    entries
+      .map(
+        (s) => `
     <div class="cv-entry">
       <div class="cv-entry-head">
         <span class="cv-entry-title">${escapeHtml(s.title)}</span>
@@ -235,8 +271,11 @@ function renderCv(): void {
       ${s.body ? `<p class="tl-desc">${escapeHtml(s.body)}</p>` : ""}
     </div>
   `,
-    )
-    .join("");
+      )
+      .join("");
+
+  const serviceHtml = renderService(serviceEntries);
+  const externalServiceHtml = renderService(externalServiceEntries);
 
   const grantsHtml = grants
     .map(
@@ -262,7 +301,7 @@ function renderCv(): void {
         ${eduHtml}
       </div>
       <div class="cv-block">
-        <div class="cv-block-title">Technical Skills</div>
+        <div class="cv-block-title">Research Interests</div>
         <div class="skill-tags">${skillsHtml}</div>
       </div>
       <a class="cv-dl" href="${escapeHtml(safeHref(cvPdfHref))}" download>
@@ -280,6 +319,10 @@ function renderCv(): void {
         ${serviceHtml}
       </div>
       <div class="cv-section">
+        <div class="cv-section-title">External &amp; Professional Service</div>
+        ${externalServiceHtml}
+      </div>
+      <div class="cv-section">
         <div class="cv-section-title">Grants &amp; Sponsored Projects</div>
         ${grantsHtml}
       </div>
@@ -287,7 +330,27 @@ function renderCv(): void {
   `;
 }
 
-function applyPage(slug: PageSlug): void {
+const PAGE_TITLES: Record<PageSlug, string> = {
+  home: "Daniel M. Mejia, Ph.D. | UTEP Computer Science",
+  about: "About | Daniel M. Mejia, Ph.D.",
+  teaching: "Teaching | Daniel M. Mejia, Ph.D.",
+  research: "Research | Daniel M. Mejia, Ph.D.",
+  impact: "Impact | Daniel M. Mejia, Ph.D.",
+  cv: "CV | Daniel M. Mejia, Ph.D.",
+  contact: "Contact | Daniel M. Mejia, Ph.D.",
+};
+
+const PAGE_HEADING_IDS: Record<PageSlug, string> = {
+  home: "hero-heading",
+  about: "about-heading",
+  teaching: "teaching-heading",
+  research: "research-heading",
+  impact: "impact-heading",
+  cv: "cv-heading",
+  contact: "contact-heading",
+};
+
+function applyPage(slug: PageSlug, opts?: { focusHeading?: boolean }): void {
   document.querySelectorAll(".page").forEach((panel) => {
     const id = panel.id.replace(/^page-/, "");
     const on = id === slug;
@@ -296,7 +359,7 @@ function applyPage(slug: PageSlug): void {
     panel.setAttribute("aria-hidden", on ? "false" : "true");
   });
 
-  document.querySelectorAll("#nav-links [data-page], .nav-brand[data-page]").forEach((el) => {
+  document.querySelectorAll("#nav-links [data-page]").forEach((el) => {
     const link = el as HTMLAnchorElement;
     const p = link.getAttribute("data-page");
     const on = p === slug;
@@ -305,8 +368,19 @@ function applyPage(slug: PageSlug): void {
     link.classList.toggle("nav-link--active", on);
   });
 
+  document.title = PAGE_TITLES[slug];
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  updateScrollProgress();
   bindFadeUpForActivePage();
+  if (slug === "home") setupCountUp();
+
+  if (opts?.focusHeading) {
+    const heading = document.getElementById(PAGE_HEADING_IDS[slug]);
+    if (heading instanceof HTMLElement) {
+      if (!heading.hasAttribute("tabindex")) heading.setAttribute("tabindex", "-1");
+      heading.focus({ preventScroll: true });
+    }
+  }
 }
 
 let fadeUpObserver: IntersectionObserver | null = null;
@@ -335,11 +409,11 @@ function bindFadeUpForActivePage(): void {
 }
 
 function setupPageRouter(): void {
-  const go = (slug: PageSlug, opts?: { replace?: boolean }): void => {
+  const go = (slug: PageSlug, opts?: { replace?: boolean; focusHeading?: boolean }): void => {
     const url = `${window.location.pathname}${window.location.search}#${slug}`;
     if (opts?.replace) history.replaceState({ page: slug }, "", url);
     else history.pushState({ page: slug }, "", url);
-    applyPage(slug);
+    applyPage(slug, { focusHeading: opts?.focusHeading });
   };
 
   const raw = window.location.hash.slice(1).toLowerCase();
@@ -357,13 +431,14 @@ function setupPageRouter(): void {
     if (!slug) return;
     const normalized = normalizePageSlug(slug);
     e.preventDefault();
-    go(normalized);
+    go(normalized, { focusHeading: true });
     const drawer = document.getElementById("nav-drawer");
     const toggle = document.getElementById("nav-toggle");
     if (drawer?.classList.contains("is-open")) {
       drawer.classList.remove("is-open");
       document.getElementById("nav-overlay")?.classList.remove("is-visible");
       document.body.classList.remove("menu-open");
+      toggle?.classList.remove("is-open");
       const overlay = document.getElementById("nav-overlay");
       if (overlay) {
         overlay.hidden = true;
@@ -375,7 +450,61 @@ function setupPageRouter(): void {
   });
 
   window.addEventListener("popstate", () => {
-    applyPage(normalizePageSlug(window.location.hash.slice(1)));
+    applyPage(normalizePageSlug(window.location.hash.slice(1)), { focusHeading: true });
+  });
+}
+
+function setupTheme(): void {
+  const KEY = "dmmejia-theme";
+  type Theme = "light" | "dark";
+
+  const systemTheme = (): Theme =>
+    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+
+  const readTheme = (): Theme =>
+    document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+
+  const applyTheme = (theme: Theme, persist: boolean): void => {
+    document.documentElement.setAttribute("data-theme", theme);
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme === "dark" ? "#0d1929" : "#1b3a6e");
+    const btn = document.getElementById("theme-toggle");
+    if (btn) {
+      const next = theme === "dark" ? "light" : "dark";
+      btn.setAttribute("aria-label", `Switch to ${next} mode`);
+      btn.setAttribute("title", `${next[0]!.toUpperCase()}${next.slice(1)} mode`);
+    }
+    if (persist) {
+      try {
+        localStorage.setItem(KEY, theme);
+      } catch {
+        /* ignore quota / private mode */
+      }
+    }
+  };
+
+  let stored: string | null = null;
+  try {
+    stored = localStorage.getItem(KEY);
+  } catch {
+    stored = null;
+  }
+  const initial: Theme = stored === "light" || stored === "dark" ? stored : systemTheme();
+  applyTheme(initial, false);
+
+  document.getElementById("theme-toggle")?.addEventListener("click", () => {
+    applyTheme(readTheme() === "dark" ? "light" : "dark", true);
+  });
+
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    let explicit: string | null = null;
+    try {
+      explicit = localStorage.getItem(KEY);
+    } catch {
+      explicit = null;
+    }
+    if (explicit === "light" || explicit === "dark") return;
+    applyTheme(e.matches ? "dark" : "light", false);
   });
 }
 
@@ -388,13 +517,15 @@ function setupNav(): void {
   window.addEventListener("scroll", () => {
     if (!navbar) return;
     navbar.classList.toggle("scrolled", window.scrollY > 40);
-  });
+    updateScrollProgress();
+  }, { passive: true });
 
   function setOpen(open: boolean): void {
     toggle?.setAttribute("aria-expanded", String(open));
     drawer?.classList.toggle("is-open", open);
     overlay?.classList.toggle("is-visible", open);
     document.body.classList.toggle("menu-open", open);
+    toggle?.classList.toggle("is-open", open);
     if (overlay) {
       overlay.hidden = !open;
       overlay.setAttribute("aria-hidden", String(!open));
@@ -414,6 +545,57 @@ function setupNav(): void {
   });
 }
 
+function updateScrollProgress(): void {
+  const bar = document.getElementById("scroll-progress");
+  if (!bar) return;
+  const doc = document.documentElement;
+  const max = doc.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0;
+  bar.style.width = `${pct}%`;
+}
+
+function prefersReducedMotion(): boolean {
+  return typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+function animateCount(el: HTMLElement): void {
+  const target = Number(el.dataset.count);
+  if (!Number.isFinite(target)) return;
+  const prefix = el.dataset.prefix ?? "";
+  const suffix = el.dataset.suffix ?? "";
+  const decimals = Number(el.dataset.decimals ?? 0);
+  const formatInt = el.dataset.format === "int";
+  const duration = 1100;
+  const start = performance.now();
+
+  const format = (n: number): string => {
+    if (formatInt) return Math.round(n).toLocaleString("en-US");
+    return n.toFixed(decimals);
+  };
+
+  if (prefersReducedMotion()) {
+    el.textContent = `${prefix}${format(target)}${suffix}`;
+    return;
+  }
+
+  const tick = (now: number): void => {
+    const t = Math.min(1, (now - start) / duration);
+    const eased = 1 - Math.pow(1 - t, 3);
+    el.textContent = `${prefix}${format(target * eased)}${suffix}`;
+    if (t < 1) requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
+}
+
+function setupCountUp(): void {
+  const els = document.querySelectorAll<HTMLElement>("[data-count]");
+  els.forEach((el) => {
+    if (el.dataset.counted === "true") return;
+    el.dataset.counted = "true";
+    animateCount(el);
+  });
+}
+
 function setFooterYear(): void {
   const el = document.getElementById("footer-year");
   if (el) el.textContent = String(new Date().getFullYear());
@@ -422,9 +604,6 @@ function setFooterYear(): void {
 function setupBackToTop(): void {
   const btn = document.getElementById("back-to-top");
   if (!btn) return;
-
-  const prefersReducedMotion = (): boolean =>
-    typeof window.matchMedia === "function" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   const update = (): void => {
     const show = window.scrollY > 520;
@@ -449,6 +628,7 @@ renderStudies();
 renderPublications();
 renderCv();
 renderContactLinks();
+setupTheme();
 setupNav();
 setupPageRouter();
 setFooterYear();

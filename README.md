@@ -23,7 +23,8 @@ Artifacts go to `dist/` (any static host, or Vercel/Netlify with â€œstatic siteâ
 | File | Purpose |
 |------|---------|
 | `src/data/courses.ts` | Course cards on Teaching |
-| `src/data/impact.ts` | Impact initiatives: role, summary, outcomes, optional link |
+| `src/data/impact.ts` | Impact initiatives: tier, role, summary, outcomes, optional link |
+| `src/data/studies.ts` | Active IRB / sponsored studies on Research |
 | `src/data/publications.ts` | Publications list: optional `href` per row for DOI / ACM DL |
 | `src/data/research.ts` | Research areas: agenda question + description + tags |
 | `src/data/cv.ts` | Education, skills, positions, grants; `cvPdfHref` for PDF |
@@ -36,7 +37,7 @@ Artifacts go to `dist/` (any static host, or Vercel/Netlify with â€œstatic siteâ
 
 ## Contact
 
-Links render from `src/data/contact.ts` (email, LinkedIn, GitHub; Scholar when activated).
+Links render from `src/data/contact.ts` (email, LinkedIn, GitHub, Google Scholar).
 
 ## Hosting
 

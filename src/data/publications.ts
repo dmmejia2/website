@@ -6,12 +6,12 @@ export interface Publication {
   href?: string;
 }
 
-/** Selected works aligned with CV (April 2026). Add DOI / ACM DL links in `href` when desired. */
+/** Selected works aligned with CV (July 2026). Prefer DOI / ACM DL / open PDF in `href`. */
 export const publications: Publication[] = [
   {
     venue: "ITiCSE",
     year: "2026",
-    title: "Poster (accepted), ITiCSE 2026",
+    title: "A Framework for Integrating Generative AI in CS Courses",
     details:
       "Martinez, V., Salazar-Perez, M., & Mejía, D. · Proceedings of the 31st Annual ACM Conference on Innovation and Technology in Computer Science Education, Madrid, Spain · Universidad Rey Juan Carlos.",
   },
@@ -21,6 +21,7 @@ export const publications: Publication[] = [
     title:
       "Bridging Academia and Industry: Leveraging Generative AI in a Software Engineering Course for Practical Industry Experiences",
     details: "Mejía, D., Holmes, E. D., Marroquin, J., & Gorson Benario, J. · ITiCSE 2025, Nijmegen, Netherlands.",
+    href: "https://doi.org/10.1145/3724363.3729036",
   },
   {
     venue: "SIGCSE",
@@ -28,12 +29,14 @@ export const publications: Publication[] = [
     title:
       "Unlocking Potential with Generative AI Instruction: Investigating Mid-level Software Development Student Perceptions, Behavior, and Adoption",
     details: "Gorson Benario, J., Marroquin, J., Chan, M. M., Holmes, E. D., & Mejía, D. · ACM SIGCSE TS 2025, Vol. 1 (pp. 395–401).",
+    href: "https://doi.org/10.1145/3641554.3701859",
   },
   {
     venue: "IEEE ISC2",
     year: "2022",
     title: "Data-Driven Metrics Applied to Traffic Crashes to Improve Observability in Smart Cities",
     details: "Mejía, D., & Villanueva-Rosales, N. · 2022 IEEE International Smart Cities Conference (ISC2), Paphos, Cyprus.",
+    href: "https://doi.org/10.1109/isc255366.2022.9922067",
   },
   {
     venue: "IEEE SmartWorld",
@@ -41,6 +44,7 @@ export const publications: Publication[] = [
     title: "Integrating Heterogeneous Freight Performance Data for Smart Mobility",
     details:
       "Mejía, D., Villanueva-Rosales, N., Torres, E., & Cheu, R. L. · 2017 IEEE SmartWorld / SCALCOM / UIC / ATC / CBDCom / IOP / SCI, pp. 1–8.",
+    href: "https://ieeexplore.ieee.org/document/8397581",
   },
   {
     venue: "Dissertation",
@@ -54,6 +58,7 @@ export const publications: Publication[] = [
     year: "2018",
     title: "Towards Semantically Annotated Data-Driven Methodologies for Composite Metric Development in Traffic Incidents",
     details: "Doctoral Consortium · International Semantic Web Conference, Monterey, CA.",
+    href: "https://ceur-ws.org/Vol-2181/paper-07.pdf",
   },
   {
     venue: "Thesis",

@@ -26,6 +26,6 @@ export const activeStudies: ActiveStudy[] = [
     role: "Principal Investigator · UTEP IRB",
     period: "Jan 2023 – Aug 2026",
     summary:
-      "How project-based learning and agile methods close the gap between academic preparation and industry expectation, underpinning curriculum development in Applied Agile Software Development, with industry survey comparison planned against employer expectations.",
+      "How project-based learning and agile methods close the gap between academic preparation and industry expectation. Findings inform Applied Agile Software Engineering, with an industry survey comparison planned against employer expectations.",
   },
 ];

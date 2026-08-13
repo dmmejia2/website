@@ -52,7 +52,7 @@ export const courses: Course[] = [
   },
   {
     code: "CS 4381",
-    title: "Applied Agile Software Development",
+    title: "Applied Agile Software Engineering",
     description:
       "Industry-style Agile delivery: sprints, Scrum, and team engineering with client-facing projects.",
     level: "Undergraduate · Upper division",
@@ -61,7 +61,7 @@ export const courses: Course[] = [
   },
   {
     code: "CS 5381",
-    title: "Applied Agile Software Development",
+    title: "Applied Agile Software Engineering",
     description:
       "Graduate Agile software engineering: sprint-based delivery with research and industry-aligned practice.",
     level: "Graduate",
@@ -81,7 +81,7 @@ export const courses: Course[] = [
     code: "CS 1190",
     title: "Fundamentals of Financial Literacy",
     description:
-      "Professional literacy developed with the UTEP/Visa Financial Literacy team: technical careers meet personal finance readiness.",
+      "Professional literacy developed with the UTEP/VISA Financial Literacy team: technical careers meet personal finance readiness.",
     level: "Undergraduate · Professional skills",
     accent: "ink",
     timesTaught: 1,
