@@ -16,7 +16,7 @@ npm run build
 npm run preview
 ```
 
-Artifacts go to `dist/` (any static host, or Vercel/Netlify with “static site” settings).
+Artifacts go to `dist/`.
 
 ## Data files
 
@@ -41,23 +41,8 @@ Artifacts go to `dist/` (any static host, or Vercel/Netlify with “static site�
 
 Links render from `src/data/contact.ts` (email, LinkedIn, GitHub, Google Scholar).
 
-## Hosting
+## Hosting (Vercel)
 
-### GitHub Pages (this repo: `website`)
+Connect the repo in Vercel. `vercel.json` sets **framework** to Vite, **build command** to `npm run build`, and **output directory** to `dist`. Leave **Root Directory** as the repo root.
 
-The workflow pushes **`dist/`** to the **`gh-pages`** branch (no `deploy-pages` API; avoids 404 if Actions wasn’t enabled as the Pages source).
-
-1. Push **`main`** (or run the workflow manually). Wait for a green run.
-2. **Settings → Pages → Build and deployment → Source: Deploy from a branch**
-3. **Branch:** `gh-pages` · **Folder:** `/ (root)` · Save.
-4. Site: **`https://dmmejia2.github.io/website/`** (path includes `/website/`). Hard-refresh if needed.
-
-If Actions can’t push: **Settings → Actions → General → Workflow permissions** → allow **Read and write**.
-
-### Netlify / Vercel / Cloudflare Pages
-
-Connect the repo; set **build command** to `npm run build` and **publish directory** to `dist`. Do **not** set `VITE_BASE` (defaults to `./`), or set `VITE_BASE=/` for a root deploy.
-
-### Any static host
-
-Run `npm run build` and upload the `dist/` folder.
+After the first deploy, optionally attach a custom domain in the Vercel dashboard. Then set absolute `og:url`, `og:image`, `canonical`, and JSON-LD URLs in `index.html` to that origin (social crawlers prefer absolute URLs).

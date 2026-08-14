@@ -11,7 +11,7 @@ export const researchAreas: ResearchArea[] = [
     agenda:
       "IRB-approved studies of sprint-based courses, client projects, and professional readiness, including responsible AI-assisted development.",
     description:
-      "Applied Agile Software Engineering and the Software Engineering Practicum are sites of longitudinal study: self-efficacy, signals from GitHub and course deliverables, and readiness across a semester. Graduate students in Applied Agile also produce pedagogy research evaluated by the department. Published work at ITiCSE and SIGCSE.",
+      "Applied Agile Software Engineering and the Software Engineering Practicum are sites of longitudinal study: self-efficacy, signals from GitHub and course deliverables, and readiness across a semester. Graduate students in Applied Agile complete a literature review and present at a class research symposium. Published work at SIGCSE 2025, ITiCSE 2025, and an ITiCSE 2026 poster.",
     tags: ["Agile pedagogy", "Professional readiness", "Client projects"],
   },
   {
@@ -19,7 +19,7 @@ export const researchAreas: ResearchArea[] = [
     agenda:
       "Pre/post surveys and course data on perceptions, behaviors, and learning outcomes when GenAI tools are integrated into CS coursework at UTEP.",
     description:
-      "Active IRB study with M. Frias and N. Villanueva-Rosales, with attention to underrepresented students in computing. Related dissemination through SIGCSE, ITiCSE, Google Tech Exchange collaboration, and the CAHSI GenAI in CS Education Consortium.",
+      "Active IRB study with M. Frias and N. Villanueva-Rosales, with attention to underrepresented students in computing. Related dissemination through SIGCSE, ITiCSE, Google Tech Exchange, the CAHSI GenAI Consortium, and the CAHSI-HACU AI Readiness Consortium.",
     tags: ["GenAI pedagogy", "HSI context", "SIGCSE · ITiCSE"],
   },
   {

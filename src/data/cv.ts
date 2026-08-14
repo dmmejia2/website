@@ -30,7 +30,7 @@ export interface ServiceEntry {
   body?: string;
 }
 
-/** Aligned with Mejia_Daniel CV July 2026. */
+/** Aligned with the August 2026 promotion dossier and July 2026 CV. */
 export const education: EducationEntry[] = [
   {
     degree: "Doctor of Philosophy in Computer Science",
@@ -70,7 +70,7 @@ export const positions: CvPosition[] = [
     period: "Sep 2024 – present",
     org: "Department of Computer Science · The University of Texas at El Paso",
     body:
-      "Delivers one of the department’s highest teaching loads across undergraduate and graduate courses, including Data Structures, Junior Professional Orientation, Applied Agile Software Development, Software Engineering Practicum, and Introduction to Computer Science. Directs the M.S. in Software Engineering. Leads IRB-approved research in agile SE and GenAI education; publishes at SIGCSE and ITiCSE (including ITiCSE 2026 poster, Madrid). CAHSI GenAI Consortium Lead; AAII AI Champions under the NSF Transformation Grant. Mentors graduate and undergraduate researchers each term and advises ~30 additional students. Serves on Fundamentals, Software Course, CQI (Lead), and Course Planning & Schedule committees; CodePath Institutional Liaison; Tech Enhanced Learning Advisory Board.",
+      "Delivers one of the department’s highest teaching loads across undergraduate and graduate courses, including Data Structures, Junior Professional Orientation, Applied Agile Software Engineering, Software Engineering Practicum, and Introduction to Computer Science. Directs the M.S. in Software Engineering. Leads IRB-approved research in agile SE and GenAI education; publishes at SIGCSE and ITiCSE (including an ITiCSE 2026 poster, Madrid). CAHSI GenAI Consortium Lead; AAII AI Champions under the NSF Transformation Grant. Currently mentors one Master’s student and six undergraduate researchers, and advises ~30 additional students each term. Serves on Fundamentals, Software Course, CQI (Lead), and Course Planning & Schedule committees; CodePath Institutional Liaison; Tech Enhanced Learning Advisory Board.",
   },
   {
     title: "Education, Workforce & Professional Development Lead",
@@ -115,7 +115,7 @@ export const serviceEntries: ServiceEntry[] = [
     period: "Aug 2024 – present",
     org: "Department of Computer Science · UTEP",
     body:
-      "Oversees curriculum design, student recruitment, academic planning, accreditation alignment, and program learning outcomes.",
+      "Oversees curriculum design, student recruitment, academic planning, accreditation alignment, and program learning outcomes. Admitted cohorts averaged 8.8 students before the directorship and 15.3 from Fall 2024 through Spring 2026; the three most recent terms average 18. Of 236 MSSwE graduates in the institutional window, one in four came through Fast Track. Observed completion is 72%, with a median graduating GPA of 3.70.",
   },
   {
     title: "M.S. Computer Science Program Advisor",
@@ -129,34 +129,34 @@ export const serviceEntries: ServiceEntry[] = [
     period: "Aug 2019 – present",
     org: "Department of Computer Science · UTEP",
     body:
-      "Advises MSCS and MSDIS students; maintains graduate program records; Graduate Program Committee; collaborates with the Graduate School and College of Engineering.",
+      "Advises MSCS and MSDIS students; maintains graduate program records; Graduate Program Committee; collaborates with the Graduate School and the Miguel A. Loya College of Engineering.",
   },
   {
     title: "Fast Track Advisor & Departmental Coordinator",
     period: "2020 – present",
     org: "Department of Computer Science · UTEP",
     body:
-      "Combined B.S./M.S. pathway; grew participation from ~5 to 30+ applicants per semester through outreach, streamlined advising, and faculty engagement.",
+      "Combined B.S./M.S. pathway; grew participation from ~5 to 30+ applicants per semester. Annual Fast Track graduate-degree completions rose from 2 in 2019 to an average of over 12 per year (2020–2026). Median time from BSCS to MSSwE is 0.99 years versus 1.42 on the traditional path. Of 281 Fast Track students on record, 83 have earned a CS graduate degree (59 MSSwE, 24 MSCS) and 6 have continued to the CS Ph.D.",
   },
   {
     title: "TA & Peer Leader Coordinator",
     period: "Aug 2019 – present",
     org: "Department of Computer Science · UTEP",
     body:
-      "Supervises 50+ teaching assistants, instructional assistants, and peer leaders each semester; hiring, assignments, and professional development.",
+      "Reviews 150+ applications per semester (more than 2,100 across 7 years) and supervises 50+ teaching assistants, instructional assistants, and peer leaders each term. Instructor of record for CS 1101, the TA-led lab paired with CS 1301.",
   },
   {
     title: "CQI Committee, Lead, Software Engineering",
     period: "Jan 2026 – present",
     org: "Department of Computer Science · UTEP",
     body:
-      "Continuous quality improvement for software engineering course outcomes, assessment, and accreditation alignment.",
+      "Continuous quality improvement for software engineering course outcomes, assessment, and accreditation alignment, coordinating 6 faculty.",
   },
   {
     title: "Course Planning & Schedule Committee",
     period: "Aug 2020 – present",
     org: "Department of Computer Science · UTEP",
-    body: "Department master schedule across three terms per year; faculty coverage and university scheduling coordination.",
+    body: "Department master schedule across three terms per year: roughly 90 sections each fall and spring, more than 1,200 fall/spring sections over 7 years.",
   },
   {
     title: "Fundamentals Course Committee",
@@ -179,7 +179,7 @@ export const serviceEntries: ServiceEntry[] = [
   {
     title: "Entering Engineering Committee, Member",
     period: "May 2024 – Jan 2026",
-    org: "College of Engineering · UTEP",
+    org: "Miguel A. Loya College of Engineering · UTEP",
     body: "ENGR core course outcomes and curricular sequencing for entering engineering students.",
   },
   {
@@ -190,7 +190,7 @@ export const serviceEntries: ServiceEntry[] = [
   },
   {
     title: "Faculty Advisor, ACM Student Chapter",
-    period: "Aug 2022 – Jul 2025",
+    period: "Aug 2022 – present",
     org: "UTEP Student Engagement & Leadership Center",
     body: "Professional development, research awareness, and chapter programming support.",
   },
@@ -214,21 +214,21 @@ export const externalServiceEntries: ServiceEntry[] = [
     period: "Apr 2026 – present",
     org: "National Science Foundation / UTEP",
     body:
-      "Leads AAII AI Champions faculty development, advancing AI integration across disciplines through structured training and curriculum support.",
+      "Leads AAII AI Champions faculty development, advancing AI integration across disciplines through structured training and curriculum support. Three cohorts of eight faculty (24 total), including three department chairs, have completed the program.",
   },
   {
     title: "CAHSI GenAI in CS Education Consortium — Consortium Lead",
     period: "Jul 2025 – present",
     org: "Computing Alliance of Hispanic-Serving Institutions",
     body:
-      "Cross-institutional coordination to develop, pilot, and disseminate evidence-based GenAI curriculum at HSIs and CAHSI-affiliated institutions.",
+      "Cross-institutional coordination to develop, pilot, and disseminate evidence-based GenAI curriculum at HSIs and CAHSI-affiliated institutions, supported by a $110,000 CAHSI award. Resources are shared across CAHSI and the CAHSI-HACU AI Readiness Consortium.",
   },
   {
     title: "Google Tech Exchange — Academic Lead",
-    period: "Jan 2023 – Oct 2025",
+    period: "2020 – present · Academic Lead since Jan 2023",
     org: "Google LLC & UTEP",
     body:
-      "UTEP’s primary academic liaison; co-instructed Software Development Studio with Google engineers for HBCU and HSI students.",
+      "UTEP’s primary academic liaison since shortly after joining as Visiting Assistant Professor; Academic Lead from January 2023. Co-instructed Software Development Studio with Google engineers for HBCU and HSI students (26 students directly). Informed SIGCSE 2025 and ITiCSE 2025 publications.",
   },
   {
     title: "VISA / UTEP Financial Literacy Initiative — Faculty Collaborator",
@@ -261,6 +261,15 @@ export const grants: GrantEntry[] = [
       "Scholars Program: Enhancing Career and Academic Pathways for Academically Talented Students with Financial Need through Accessible and High-Quality Education Leveraging CAHSI Evidence-Based Practices.",
   },
   {
+    title: "CAHSI Award: Consortium for Generative AI in Computer Science Education",
+    period: "2025 – present",
+    org: "Computing Alliance of Hispanic-Serving Institutions",
+    role: "Lead",
+    amount: "$110,000",
+    body:
+      "Supports UTEP’s participation in the Consortium for Generative AI in Computer Science Education, including faculty professional development across the CAHSI network and dissemination through the CAHSI-HACU AI Readiness Consortium.",
+  },
+  {
     title: "Google Award: exploreCSR",
     period: "Sep 2021 – May 2022",
     org: "Google",
@@ -278,4 +287,4 @@ export const grants: GrantEntry[] = [
   },
 ];
 
-export const cvPdfHref = "./cv-daniel-mejia.pdf";
+export const cvPdfHref = "/cv-daniel-mejia.pdf";

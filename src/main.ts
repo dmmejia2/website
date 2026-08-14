@@ -168,7 +168,8 @@ function renderLoadViz(): void {
     (el): el is HTMLElement => !!el,
   );
   if (!roots.length) return;
-  const taught = courses.filter((c) => c.timesTaught > 0);
+  // Lecture sections in the dossier table (excludes the Google Tech Exchange studio).
+  const taught = courses.filter((c) => c.timesTaught > 0 && c.id !== "tech-ex");
   const max = Math.max(...taught.map((c) => c.timesTaught), 1);
   const total = taught.reduce((sum, c) => sum + c.timesTaught, 0);
   const html = `

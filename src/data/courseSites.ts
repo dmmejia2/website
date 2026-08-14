@@ -175,8 +175,8 @@ export const courseSites: CourseSite[] = [
     courseId: "cs-4390-5388",
     term: "Fall 2026",
     overview:
-      "Software Project Management (cross-listed CS 4390 / CS 5388): planning, estimation, risk, and leading a software project to delivery. Undergraduate and graduate sections meet together this term.",
-    now: "Term opening · Syllabus, how the cross-listed sections meet, and what “managing a project” means in this room—not a coding sprint.",
+      "Software Project Management (cross-listed CS 4390 / CS 5388): planning, estimation, risk, and leading a software project to delivery. The MSSwE curriculum is redesigned against PMI, SWEBOK, and DORA practice—business case, hybrid delivery, risk, AI governance, and change. Undergraduate and graduate sections meet together this term.",
+    now: "Term opening · Syllabus and the redesigned project-management contract: what “managing a project” means in this room—not a coding sprint.",
     behindCue: "Read the syllabus when it is posted. The first weeks are about how we will plan, not about catching up on code.",
     due: [],
     weeks: [

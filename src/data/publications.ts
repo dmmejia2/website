@@ -11,18 +11,18 @@ export interface Publication {
   featured?: boolean;
 }
 
-/** Selected works aligned with CV (July 2026). Prefer DOI / ACM DL / open PDF in `href`. */
+/** Selected works aligned with the August 2026 dossier. Prefer DOI / ACM DL / open PDF in `href`. */
 export const publications: Publication[] = [
   {
     venue: "ITiCSE",
     year: "2026",
     title: "A Framework for Integrating Generative AI in CS Courses",
     details:
-      "Martinez, V., Salazar-Perez, M., & Mejía, D. · Proceedings of the 31st Annual ACM Conference on Innovation and Technology in Computer Science Education, Madrid, Spain · Universidad Rey Juan Carlos.",
+      "Peer-reviewed poster · Martinez, V., Salazar-Perez, M., & Mejía, D. · ITiCSE 2026, Madrid, Spain · Universidad Rey Juan Carlos.",
     href: "https://iticse.acm.org/2026/program/",
     themes: ["genai", "csed"],
     featured: true,
-    cite: "Martinez, V., Salazar-Perez, M., & Mejía, D. (2026). A Framework for Integrating Generative AI in CS Courses. Proceedings of the 31st Annual ACM Conference on Innovation and Technology in Computer Science Education, Madrid, Spain.",
+    cite: "Martinez, V., Salazar-Perez, M., & Mejía, D. (2026). A framework for integrating generative AI in CS courses [Poster]. Proceedings of the 31st ACM Conference on Innovation and Technology in Computer Science Education, Madrid, Spain.",
   },
   {
     venue: "ITiCSE",

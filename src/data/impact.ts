@@ -21,7 +21,7 @@ export const impactInitiatives: ImpactInitiative[] = [
     summary:
       "University-wide faculty development under UTEP’s Institute for Applied AI Innovation, funded through the NSF Transformation Grant via the Provost’s Office, building AI fluency across disciplines, not only in Computer Science.",
     outcomes:
-      "Three cohorts of eight faculty each from colleges across campus, including department chairs. Few faculty at the instructional rank lead professional development for colleagues who themselves hold departmental leadership roles.",
+      "Three cohorts of eight faculty each—24 faculty from every college, including three department chairs (12.5% of participants). Collaboration already includes Pharmacy and Speech-Language Pathology. Few faculty at the instructional rank lead professional development for colleagues who themselves hold departmental leadership roles.",
     href: "https://www.utep.edu/aaii/",
     linkLabel: "AAII at UTEP",
   },
@@ -33,7 +33,7 @@ export const impactInitiatives: ImpactInitiative[] = [
     summary:
       "National consortium for generative AI in postsecondary computer science: curriculum, instructor resources, and cross-institutional coordination at Hispanic-Serving Institutions.",
     outcomes:
-      "Coordinates GenAI curriculum integration across roughly 20 CAHSI-affiliated member institutions, with faculty and staff participation from every one; public resources at teachcswithai.org.",
+      "Coordinates GenAI curriculum integration across roughly 20 CAHSI-affiliated member institutions, supported by a $110,000 CAHSI award. As GenAI Fellow, delivered professional development seminars (~30 faculty per session) and is disseminating modules across CAHSI and the CAHSI-HACU AI Readiness Consortium; public resources at teachcswithai.org.",
     href: "https://www.teachcswithai.org",
     linkLabel: "Teach CS with AI",
   },
@@ -50,6 +50,16 @@ export const impactInitiatives: ImpactInitiative[] = [
     linkLabel: "S-STEM at UTEP",
   },
   {
+    id: "embedded-ai",
+    title: "Embedded AI Initiative",
+    role: "Contributor · NSF- and Google-supported",
+    tier: "standard",
+    summary:
+      "Cross-institutional effort integrating AI concepts and ethics across the curriculum, with computer scientists, ethicists, and education researchers—including collaborators at Harvard and Northeastern, and UTEP Philosophy.",
+    outcomes:
+      "Educational materials on responsible AI, developed with Dr. Aliya Dewey, have been implemented in 5 courses to date and are being adopted in UTEP Computer Science and shared with other institutions.",
+  },
+  {
     id: "msswe",
     title: "M.S. in Software Engineering (MSSwE)",
     role: "Program Director · Aug 2024 – present",
@@ -57,7 +67,7 @@ export const impactInitiatives: ImpactInitiative[] = [
     summary:
       "Professional graduate degree spanning curriculum design, recruitment, accreditation preparation, practicum, and Secure Cyber-Systems track options.",
     outcomes:
-      "Fast Track (combined B.S./M.S.) participation grew from roughly five applicants per term to more than thirty through outreach, streamlined advising, and stronger faculty engagement.",
+      "Admitted cohorts averaged 8.8 students before the directorship and 15.3 from Fall 2024 through Spring 2026; the three most recent terms average 18. Fast Track applications grew from about five per term to more than thirty. Of 236 MSSwE graduates in the institutional window, 25% came through Fast Track; observed completion is 72% with a median graduating GPA of 3.70.",
     href: "https://catalog.utep.edu/grad/college-of-engineering/computer-science/software-engineering/",
     linkLabel: "Graduate catalog",
   },
@@ -81,7 +91,7 @@ export const impactInitiatives: ImpactInitiative[] = [
     summary:
       "UTEP’s primary academic liaison for Google Tech Exchange, one of Google's flagship university engagement programs for HBCU and HSI partners.",
     outcomes:
-      "Co-instructed the Software Development Studio with Google engineers, reaching students from HBCUs and HSIs. The partnership strengthened UTEP’s position as a key HSI partner and underpinned GenAI-in-SE scholarship at SIGCSE and ITiCSE 2025.",
+      "Co-instructed the Software Development Studio with Google engineers, reaching 26 students from HBCUs and HSIs. The partnership strengthened UTEP’s position as a key HSI partner and underpinned GenAI-in-SE scholarship at SIGCSE and ITiCSE 2025.",
   },
   {
     id: "visa-literacy",

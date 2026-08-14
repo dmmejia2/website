@@ -31,7 +31,7 @@ export function isCurrentCourse(id: string): boolean {
 export const GENAI_CLASSROOM =
   "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model—mastery first, then AI as a tool used ethically, not a substitute.";
 
-/** Core teaching aligned with July 2026 CV and promotion dossier section counts. */
+/** Core teaching aligned with August 2026 dossier lecture counts (Fall 2019–Spring 2026). */
 export const courses: Course[] = [
   {
     id: "cs-3195",
@@ -69,7 +69,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Lower division",
     accent: "copper",
     timesTaught: 9,
-    vibe: "Gateway, not gatekeeping. Since Fall 2023 I have been sole instructor of record through a faculty shortage, with sections growing from about 45 students to over 200. The job is to keep the door open without lowering what “ready for CS 2302” means.",
+    vibe: "Gateway, not gatekeeping. Since Fall 2023 I have been sole instructor of record through a faculty shortage. The job is to keep the door open without lowering what “ready for CS 2302” means.",
     genAi: GENAI_CLASSROOM,
     projects: ["Problem-solving and programming foundations", "Early major pathways and study habits"],
   },
@@ -95,7 +95,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Upper division",
     accent: "copper",
     timesTaught: 5,
-    vibe: "Built from the ground up so the classroom matches how software is actually shipped. Sprints, Scrum, and client-facing work—not a slide deck about Agile. Site of the Agile Experience Study.",
+    vibe: "Built from the ground up so the classroom matches how software is actually shipped. Sprints, Scrum, GitHub, code review, and client-facing work—not a slide deck about Agile. Interns at Google, Uber, and PepsiCo have said the course matched their jobs. Site of the Agile Experience Study.",
     genAi: "AI is in the toolchain, with the same rule as everywhere else: you still own the design, the commit, and the explanation.",
     projects: ["Sprint-based team delivery", "Client-facing engineering", "GitHub and course deliverables as professional signals"],
   },
@@ -108,7 +108,7 @@ export const courses: Course[] = [
     level: "Graduate",
     accent: "copper",
     timesTaught: 5,
-    vibe: "Graduate counterpart to CS 4381: same industry cadence, higher expectation for judgment, reflection, and connecting practice to the research literature.",
+    vibe: "Graduate counterpart to CS 4381: same industry cadence, higher expectation for judgment and reflection. Graduate students complete a literature review on a software-engineering research topic and present a poster at a class research symposium—the only course in the department with a research component built in.",
     genAi: "AI is in the toolchain, with the same rule as everywhere else: you still own the design, the commit, and the explanation.",
     projects: ["Sprint-based graduate delivery", "Industry-aligned practice with research framing"],
   },
@@ -136,7 +136,7 @@ export const courses: Course[] = [
     accent: "teal",
     timesTaught: 0,
     timesNote: "Fall 2026",
-    vibe: "How software projects are planned and steered—not only how code is written. Undergraduate and graduate sections meet together.",
+    vibe: "How software projects are planned and steered—not only how code is written. The graduate MSSwE curriculum is redesigned against current industry standards (PMI Talent Triangle, Pulse of the Profession, SWEBOK, DORA): business case, hybrid delivery, risk, AI governance, and organizational change. Undergraduate and graduate sections meet together.",
     genAi: GENAI_CLASSROOM,
     projects: ["Project planning and risk", "Estimation and delivery tracking"],
   },
@@ -148,9 +148,20 @@ export const courses: Course[] = [
       "Professional literacy developed with the UTEP/VISA Financial Literacy team: technical careers meet personal finance readiness.",
     level: "Undergraduate · Professional skills",
     accent: "ink",
-    timesTaught: 1,
+    timesTaught: 2,
     vibe: "Built with VISA so CS students leave with financial literacy they will actually use—pay, debt, internships, and the first years of a technical career—not a generic personal-finance lecture.",
     projects: ["Personal finance readiness for technical careers", "Partnership modules with the UTEP/VISA team"],
+  },
+  {
+    id: "cs-1290",
+    code: "CS 1290",
+    title: "Problem-Solving Topics",
+    description: "Selected problem-solving topics in computer science, taught as a letter-graded lecture section.",
+    level: "Undergraduate · Lower division",
+    accent: "ink",
+    timesTaught: 1,
+    vibe: "A focused problem-solving offering alongside the gateway sequence—practice first, not a survey of trivia.",
+    projects: ["Structured problem-solving practice"],
   },
   {
     id: "tech-ex",

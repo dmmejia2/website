@@ -5,14 +5,14 @@ export interface ActiveStudy {
   summary: string;
 }
 
-/** Active IRB / sponsored studies. July 2026 CV & dossier. */
+/** Active IRB / sponsored studies. August 2026 dossier. */
 export const activeStudies: ActiveStudy[] = [
   {
     title: "The Agile Experience Study",
     role: "Principal Investigator · UTEP IRB",
     period: "Mar 2026 – May 2027",
     summary:
-      "Mixed-methods, longitudinal study in CS 4381, CS 5381, and CS 5389: how students develop professional engineering competencies across sprint cycles: self-efficacy, signals from GitHub and course deliverables, and readiness for responsible AI-assisted development.",
+      "Mixed-methods, longitudinal study tracking up to 110 students in CS 4381, CS 5381, and CS 5389: how they develop professional engineering competencies across sprint cycles—self-efficacy, signals from GitHub and course deliverables, and readiness for responsible AI-assisted development.",
   },
   {
     title: "Understanding Generative AI in Computer Science Courses",

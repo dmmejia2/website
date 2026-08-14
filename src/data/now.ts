@@ -14,9 +14,9 @@ export const nowItems: NowItem[] = [
     id: "iticse-2026",
     date: "2026-07-01",
     tag: "Conference",
-    title: "ITiCSE 2026 in Madrid",
+    title: "ITiCSE 2026 poster in Madrid",
     summary:
-      "A Framework for Integrating Generative AI in CS Courses, with Vianey Martinez and Melina Salazar-Perez, presented at the 31st ACM ITiCSE at Universidad Rey Juan Carlos.",
+      "Peer-reviewed poster: A Framework for Integrating Generative AI in CS Courses, with Vianey Martinez and Melina Salazar-Perez, at the 31st ACM ITiCSE at Universidad Rey Juan Carlos.",
     href: "https://iticse.acm.org/2026/program/",
     linkLabel: "Conference program",
   },
@@ -26,7 +26,7 @@ export const nowItems: NowItem[] = [
     tag: "Program",
     title: "Leading AAII AI Champions",
     summary:
-      "University-wide faculty development under UTEP’s Institute for Applied AI Innovation: three cohorts of eight faculty, including department chairs, across campus—not only in Computer Science.",
+      "University-wide faculty development under UTEP’s Institute for Applied AI Innovation: 24 faculty across three cohorts of eight, including three department chairs, from every college—not only Computer Science.",
     href: "https://www.utep.edu/aaii/",
     linkLabel: "AAII at UTEP",
   },
@@ -60,9 +60,9 @@ export const nowItems: NowItem[] = [
     id: "msswe-fast-track",
     date: "2024-08-01",
     tag: "Teaching",
-    title: "MSSwE Fast Track demand keeps rising",
+    title: "MSSwE cohorts more than double",
     summary:
-      "As Program Director, Fast Track (combined B.S./M.S.) participation grew from roughly five applicants per term to more than thirty through outreach, streamlined advising, and stronger faculty engagement.",
+      "Since taking the directorship in 2024, admitted cohorts rose from 8.8 students on average to 15.3 (Fall 2024–Spring 2026), with the three most recent terms averaging 18. Fast Track applications grew from about five per term to more than thirty.",
     href: "https://catalog.utep.edu/grad/college-of-engineering/computer-science/software-engineering/",
     linkLabel: "MSSwE catalog",
   },
