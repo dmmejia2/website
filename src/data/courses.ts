@@ -29,7 +29,7 @@ export function isCurrentCourse(id: string): boolean {
 }
 
 export const GENAI_CLASSROOM =
-  "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model—mastery first, then AI as a tool used ethically, not a substitute.";
+  "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model. Mastery first, then AI as a tool used ethically, not a substitute.";
 
 /** Core teaching aligned with August 2026 dossier lecture counts (Fall 2019–Spring 2026). */
 export const courses: Course[] = [
@@ -44,7 +44,7 @@ export const courses: Course[] = [
     accent: "ink",
     timesTaught: 14,
     vibe: "A professional-practice course more than a coding course: how to show up, communicate, and make decisions you can stand behind. Many students treat it as a checkbox; the ones who don’t walk out with a clearer internship and career plan.",
-    genAi: "We talk about disclosing AI use in professional settings—resumes, take-homes, and workplace norms—not only in homework.",
+    genAi: "We talk about disclosing AI use in professional settings: resumes, take-homes, and workplace norms, not only in homework.",
     projects: ["Career artifacts and internship readiness", "Ethics case discussions", "Workplace communication practice"],
   },
   {
@@ -82,7 +82,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Core",
     accent: "slate",
     timesTaught: 7,
-    vibe: "The course I most enjoy teaching and the hardest to teach well. It often decides whether a student stays in the major, and people arrive with widely different preparation. Closing that gap in one semester—without losing those who arrive furthest behind—is the daily work.",
+    vibe: "The course I most enjoy teaching and the hardest to teach well. It often decides whether a student stays in the major, and people arrive with widely different preparation. Closing that gap in one semester, without losing those who arrive furthest behind, is the daily work.",
     genAi: GENAI_CLASSROOM,
     projects: ["Stacks, trees, heaps, hashing, graphs", "Algorithmic analysis in Python", "Balanced structures"],
   },
@@ -95,7 +95,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Upper division",
     accent: "copper",
     timesTaught: 5,
-    vibe: "Built from the ground up so the classroom matches how software is actually shipped. Sprints, Scrum, GitHub, code review, and client-facing work—not a slide deck about Agile. Interns at Google, Uber, and PepsiCo have said the course matched their jobs. Site of the Agile Experience Study.",
+    vibe: "Built from the ground up so the classroom matches how software is actually shipped. Sprints, Scrum, GitHub, code review, and client-facing work, not a slide deck about Agile. Interns at Google, Uber, and PepsiCo have said the course matched their jobs. Site of the Agile Experience Study.",
     genAi: "AI is in the toolchain, with the same rule as everywhere else: you still own the design, the commit, and the explanation.",
     projects: ["Sprint-based team delivery", "Client-facing engineering", "GitHub and course deliverables as professional signals"],
   },
@@ -108,7 +108,7 @@ export const courses: Course[] = [
     level: "Graduate",
     accent: "copper",
     timesTaught: 5,
-    vibe: "Graduate counterpart to CS 4381: same industry cadence, higher expectation for judgment and reflection. Graduate students complete a literature review on a software-engineering research topic and present a poster at a class research symposium—the only course in the department with a research component built in.",
+    vibe: "Graduate counterpart to CS 4381: same industry cadence, higher expectation for judgment and reflection. Graduate students complete a literature review on a software-engineering research topic and present a poster at a class research symposium, the only course in the department with a research component built in.",
     genAi: "AI is in the toolchain, with the same rule as everywhere else: you still own the design, the commit, and the explanation.",
     projects: ["Sprint-based graduate delivery", "Industry-aligned practice with research framing"],
   },
@@ -136,7 +136,7 @@ export const courses: Course[] = [
     accent: "teal",
     timesTaught: 0,
     timesNote: "Fall 2026",
-    vibe: "How software projects are planned and steered—not only how code is written. The graduate MSSwE curriculum is redesigned against current industry standards (PMI Talent Triangle, Pulse of the Profession, SWEBOK, DORA): business case, hybrid delivery, risk, AI governance, and organizational change. Undergraduate and graduate sections meet together.",
+    vibe: "How software projects are planned and steered, not only how code is written. The graduate MSSwE curriculum is redesigned against current industry standards (PMI Talent Triangle, Pulse of the Profession, SWEBOK, DORA): business case, hybrid delivery, risk, AI governance, and organizational change. Undergraduate and graduate sections meet together.",
     genAi: GENAI_CLASSROOM,
     projects: ["Project planning and risk", "Estimation and delivery tracking"],
   },
@@ -149,7 +149,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Professional skills",
     accent: "ink",
     timesTaught: 2,
-    vibe: "Built with VISA so CS students leave with financial literacy they will actually use—pay, debt, internships, and the first years of a technical career—not a generic personal-finance lecture.",
+    vibe: "Built with VISA so CS students leave with financial literacy they will actually use: pay, debt, internships, and the first years of a technical career, not a generic personal-finance lecture.",
     projects: ["Personal finance readiness for technical careers", "Partnership modules with the UTEP/VISA team"],
   },
   {
@@ -160,7 +160,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Lower division",
     accent: "ink",
     timesTaught: 1,
-    vibe: "A focused problem-solving offering alongside the gateway sequence—practice first, not a survey of trivia.",
+    vibe: "A focused problem-solving offering alongside the gateway sequence: practice first, not a survey of trivia.",
     projects: ["Structured problem-solving practice"],
   },
   {
@@ -172,7 +172,7 @@ export const courses: Course[] = [
     level: "Special offering · Tech Exchange",
     accent: "teal",
     timesTaught: 1,
-    vibe: "A Google Tech Exchange studio with HBCU and HSI cohorts: industry-aligned software practice, not a UTEP catalog course. The partnership is the point—students work in a setting closer to how Google develops software.",
+    vibe: "A Google Tech Exchange studio with HBCU and HSI cohorts: industry-aligned software practice, not a UTEP catalog course. The partnership is the point. Students work in a setting closer to how Google develops software.",
     projects: ["Industry-aligned studio work", "HBCU/HSI cohort collaboration"],
   },
   {
@@ -183,7 +183,7 @@ export const courses: Course[] = [
     level: "Undergraduate · Upper division",
     accent: "slate",
     timesTaught: 1,
-    vibe: "Theory with the same teaching stance as the rest of my courses: see one, do one, and understand the why—not only the proof technique of the week.",
+    vibe: "Theory with the same teaching stance as the rest of my courses: see one, do one, and understand the why, not only the proof technique of the week.",
     genAi: "Models can check a proof sketch; they cannot replace the part where you can explain why the construction works.",
     projects: ["Automata and formal languages", "Computability arguments"],
   },

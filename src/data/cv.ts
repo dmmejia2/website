@@ -210,34 +210,34 @@ export const serviceEntries: ServiceEntry[] = [
 
 export const externalServiceEntries: ServiceEntry[] = [
   {
-    title: "NSF Transformation Grant — AI Champions Program Lead",
+    title: "NSF Transformation Grant: AI Champions Program Lead",
     period: "Apr 2026 – present",
     org: "National Science Foundation / UTEP",
     body:
       "Leads AAII AI Champions faculty development, advancing AI integration across disciplines through structured training and curriculum support. Three cohorts of eight faculty (24 total), including three department chairs, have completed the program.",
   },
   {
-    title: "CAHSI GenAI in CS Education Consortium — Consortium Lead",
+    title: "CAHSI GenAI in CS Education Consortium: Consortium Lead",
     period: "Jul 2025 – present",
     org: "Computing Alliance of Hispanic-Serving Institutions",
     body:
       "Cross-institutional coordination to develop, pilot, and disseminate evidence-based GenAI curriculum at HSIs and CAHSI-affiliated institutions, supported by a $110,000 CAHSI award. Resources are shared across CAHSI and the CAHSI-HACU AI Readiness Consortium.",
   },
   {
-    title: "Google Tech Exchange — Academic Lead",
+    title: "Google Tech Exchange: Academic Lead",
     period: "2020 – present · Academic Lead since Jan 2023",
     org: "Google LLC & UTEP",
     body:
       "UTEP’s primary academic liaison since shortly after joining as Visiting Assistant Professor; Academic Lead from January 2023. Co-instructed Software Development Studio with Google engineers for HBCU and HSI students (26 students directly). Informed SIGCSE 2025 and ITiCSE 2025 publications.",
   },
   {
-    title: "VISA / UTEP Financial Literacy Initiative — Faculty Collaborator",
+    title: "VISA / UTEP Financial Literacy Initiative: Faculty Collaborator",
     period: "Jul 2023 – present",
     org: "Visa Inc. & UTEP",
     body: "Design and delivery of financial literacy curriculum in a corporate–academic partnership.",
   },
   {
-    title: "CodePath — Institutional Liaison",
+    title: "CodePath: Institutional Liaison",
     period: "Jan 2025 – present",
     org: "CodePath.org",
     body: "Campus point of contact for industry-aligned technical education and career preparation pathways.",

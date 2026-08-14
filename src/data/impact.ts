@@ -21,7 +21,7 @@ export const impactInitiatives: ImpactInitiative[] = [
     summary:
       "University-wide faculty development under UTEP’s Institute for Applied AI Innovation, funded through the NSF Transformation Grant via the Provost’s Office, building AI fluency across disciplines, not only in Computer Science.",
     outcomes:
-      "Three cohorts of eight faculty each—24 faculty from every college, including three department chairs (12.5% of participants). Collaboration already includes Pharmacy and Speech-Language Pathology. Few faculty at the instructional rank lead professional development for colleagues who themselves hold departmental leadership roles.",
+      "Three cohorts of eight faculty each, 24 faculty from every college, including three department chairs (12.5% of participants). Collaboration already includes Pharmacy and Speech-Language Pathology. Few faculty at the instructional rank lead professional development for colleagues who themselves hold departmental leadership roles.",
     href: "https://www.utep.edu/aaii/",
     linkLabel: "AAII at UTEP",
   },
@@ -55,7 +55,7 @@ export const impactInitiatives: ImpactInitiative[] = [
     role: "Contributor · NSF- and Google-supported",
     tier: "standard",
     summary:
-      "Cross-institutional effort integrating AI concepts and ethics across the curriculum, with computer scientists, ethicists, and education researchers—including collaborators at Harvard and Northeastern, and UTEP Philosophy.",
+      "Cross-institutional effort integrating AI concepts and ethics across the curriculum, with computer scientists, ethicists, and education researchers, including collaborators at Harvard and Northeastern, and UTEP Philosophy.",
     outcomes:
       "Educational materials on responsible AI, developed with Dr. Aliya Dewey, have been implemented in 5 courses to date and are being adopted in UTEP Computer Science and shared with other institutions.",
   },

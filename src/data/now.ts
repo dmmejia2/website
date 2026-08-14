@@ -8,7 +8,7 @@ export interface NowItem {
   linkLabel?: string;
 }
 
-/** Dated updates — newest first. Edit here when something ships. */
+/** Dated updates: newest first. Edit here when something ships. */
 export const nowItems: NowItem[] = [
   {
     id: "iticse-2026",
@@ -26,7 +26,7 @@ export const nowItems: NowItem[] = [
     tag: "Program",
     title: "Leading AAII AI Champions",
     summary:
-      "University-wide faculty development under UTEP’s Institute for Applied AI Innovation: 24 faculty across three cohorts of eight, including three department chairs, from every college—not only Computer Science.",
+      "University-wide faculty development under UTEP’s Institute for Applied AI Innovation: 24 faculty across three cohorts of eight, including three department chairs, from every college, not only Computer Science.",
     href: "https://www.utep.edu/aaii/",
     linkLabel: "AAII at UTEP",
   },

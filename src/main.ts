@@ -16,9 +16,9 @@ import {
 } from "./data/cv";
 import { contactAudiences, contactLinks } from "./data/contact";
 import { nowItems } from "./data/now";
-import { advisingPathways, CONTACT_EMAIL, officeHours } from "./data/students";
+import { advisingPathways, CONTACT_EMAIL, officeHours, studentPrograms } from "./data/students";
 
-const PAGE_SLUGS = ["home", "updates", "about", "teaching", "research", "impact", "cv", "contact"] as const;
+const PAGE_SLUGS = ["home", "updates", "teaching", "research", "impact", "cv", "contact"] as const;
 type PageSlug = (typeof PAGE_SLUGS)[number];
 
 interface Route {
@@ -79,6 +79,12 @@ function parseRoute(raw: string): Route {
   const [head, ...rest] = trimmed.split("/");
   if (head === "students") {
     return { slug: "teaching", raw: "teaching/start" };
+  }
+  if (head === "about") {
+    return { slug: "home", raw: "about" };
+  }
+  if (head === "synergy") {
+    return { slug: "impact", raw: "synergy" };
   }
   const slug = normalizePageSlug(head ?? "");
   const sub = rest.filter(Boolean).join("/");
@@ -245,6 +251,27 @@ function renderOfficeHours(): void {
   document.querySelectorAll("[data-office-hours]").forEach((root) => {
     root.innerHTML = hoursCardHtml();
   });
+}
+
+function renderStudentPrograms(): void {
+  const root = document.getElementById("student-path-grid");
+  if (!root) return;
+  root.innerHTML = studentPrograms
+    .map((item) => {
+      const title = escapeHtml(item.title);
+      const blurb = escapeHtml(item.blurb);
+      if (item.pathwayId) {
+        return `<button type="button" class="student-path" data-pathway="${escapeHtml(item.pathwayId)}">
+          <strong>${title}</strong>
+          <span>${blurb}</span>
+        </button>`;
+      }
+      return `<article class="student-path student-path--static">
+        <strong>${title}</strong>
+        <span>${blurb}</span>
+      </article>`;
+    })
+    .join("");
 }
 
 function extLink(href: string | undefined, label: string, fallback: string): string {
@@ -806,10 +833,9 @@ function renderCv(): void {
 const PAGE_TITLES: Record<PageSlug, string> = {
   home: "Daniel M. Mejia, Ph.D. | UTEP Computer Science",
   updates: "Updates | Daniel M. Mejia, Ph.D.",
-  about: "About | Daniel M. Mejia, Ph.D.",
   teaching: "Teaching | Daniel M. Mejia, Ph.D.",
   research: "Research | Daniel M. Mejia, Ph.D.",
-  impact: "Impact | Daniel M. Mejia, Ph.D.",
+  impact: "Synergistic | Daniel M. Mejia, Ph.D.",
   cv: "CV | Daniel M. Mejia, Ph.D.",
   contact: "Contact | Daniel M. Mejia, Ph.D.",
 };
@@ -817,7 +843,6 @@ const PAGE_TITLES: Record<PageSlug, string> = {
 const PAGE_HEADING_IDS: Record<PageSlug, string> = {
   home: "hero-heading",
   updates: "updates-heading",
-  about: "about-heading",
   teaching: "teaching-heading",
   research: "research-heading",
   impact: "impact-heading",
@@ -859,7 +884,9 @@ function applyPage(route: Route, opts?: { focusHeading?: boolean; preserveScroll
     const p = link.getAttribute("data-page");
     const href = link.getAttribute("href") || "";
     let on = p === slug;
-    if (p === "teaching") {
+    if (p === "home") {
+      on = slug === "home";
+    } else if (p === "teaching") {
       if (href === "#teaching/start") {
         on = route.raw === "teaching/start" || !!route.courseId;
       } else if (href === "#teaching") {
@@ -873,22 +900,20 @@ function applyPage(route: Route, opts?: { focusHeading?: boolean; preserveScroll
     link.classList.toggle("nav-link--active", on);
   });
 
-  const studentsToggle = document.getElementById("nav-students-toggle");
-  const studentsOn = slug === "teaching" && (route.raw === "teaching/start" || !!route.courseId);
-  studentsToggle?.classList.toggle("is-active", studentsOn);
-  if (studentsOn) studentsToggle?.setAttribute("aria-current", "true");
-  else studentsToggle?.removeAttribute("aria-current");
+  syncBioFold(route);
 
   if (route.courseId) {
     const course = courses.find((c) => c.id === route.courseId);
     document.title = course ? `${course.code} | ${CURRENT_TERM}` : PAGE_TITLES.teaching;
   } else if (route.raw === "teaching/start") {
     document.title = "Students | Daniel M. Mejia, Ph.D.";
+  } else if (route.raw === "about") {
+    document.title = "About | Daniel M. Mejia, Ph.D.";
   } else {
     document.title = PAGE_TITLES[slug];
   }
 
-  if (!opts?.preserveScroll && !tabOnly) {
+  if (!opts?.preserveScroll && !tabOnly && route.raw !== "about") {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }
   updateScrollProgress();
@@ -899,14 +924,18 @@ function applyPage(route: Route, opts?: { focusHeading?: boolean; preserveScroll
     ? document.title
     : route.raw === "teaching/start"
       ? "Students | Daniel M. Mejia, Ph.D."
-      : PAGE_TITLES[slug];
+      : route.raw === "about"
+        ? "About | Daniel M. Mejia, Ph.D."
+        : PAGE_TITLES[slug];
   announce(`Now viewing ${liveTitle}`);
 
   const headingId = route.courseId
     ? "course-site-title"
     : route.raw === "teaching/start"
       ? "students-heading"
-      : PAGE_HEADING_IDS[slug];
+      : route.raw === "about"
+        ? "about-heading"
+        : PAGE_HEADING_IDS[slug];
 
   if (opts?.focusHeading && !route.scrollId && !tabOnly) {
     const heading = document.getElementById(headingId);
@@ -923,6 +952,13 @@ function applyPage(route: Route, opts?: { focusHeading?: boolean; preserveScroll
         block: "start",
       });
     });
+  } else if (route.raw === "about") {
+    requestAnimationFrame(() => {
+      document.getElementById("bio-fold")?.scrollIntoView({
+        behavior: prefersReducedMotion() ? "auto" : "smooth",
+        block: "start",
+      });
+    });
   }
 }
 
@@ -935,15 +971,7 @@ function go(raw: string, opts?: { replace?: boolean; focusHeading?: boolean; pre
   applyPage(route, { focusHeading: opts?.focusHeading, preserveScroll: opts?.preserveScroll });
 }
 
-function closeNavDropdowns(): void {
-  document.querySelectorAll(".nav-item-dd").forEach((item) => {
-    item.classList.remove("is-open");
-    item.querySelector(".nav-dd-toggle")?.setAttribute("aria-expanded", "false");
-  });
-}
-
 function closeNavDrawer(): void {
-  closeNavDropdowns();
   const drawer = document.getElementById("nav-drawer");
   const toggle = document.getElementById("nav-toggle");
   if (!drawer?.classList.contains("is-open")) return;
@@ -968,13 +996,35 @@ function scrollToId(id: string): void {
 }
 
 function prefillAdvising(course?: Course): void {
-  const path = document.getElementById("advising-path");
+  setAdvisingPathway("course");
   const note = document.getElementById("advising-note");
-  if (path instanceof HTMLSelectElement) path.value = "course";
   if (note instanceof HTMLTextAreaElement && course) {
     note.value = `Course: ${course.code} ${course.title}\nTerm: ${CURRENT_TERM}\nWhat I need: `;
     note.focus();
   }
+}
+
+function setAdvisingPathway(id: string): void {
+  const path = document.getElementById("advising-path");
+  if (!(path instanceof HTMLSelectElement)) return;
+  if (!advisingPathways.some((p) => p.id === id)) return;
+  path.value = id;
+  updateAdvisingHint();
+}
+
+function updateAdvisingHint(): void {
+  const path = document.getElementById("advising-path");
+  const hint = document.getElementById("advising-hint");
+  if (!(path instanceof HTMLSelectElement) || !hint) return;
+  const pathway = advisingPathways.find((p) => p.id === path.value);
+  hint.textContent = pathway?.hint ?? "";
+}
+
+function syncBioFold(route: Route): void {
+  const fold = document.getElementById("bio-fold");
+  if (!(fold instanceof HTMLDetailsElement)) return;
+  if (route.raw === "about") fold.open = true;
+  else if (route.slug === "home") fold.open = false;
 }
 
 let fadeUpObserver: IntersectionObserver | null = null;
@@ -1027,6 +1077,19 @@ function setupPageRouter(): void {
       const tab = normalizeCourseTab(tabEl.getAttribute("data-course-tab") ?? "");
       go(courseTabHash(currentRoute.courseId, tab), { replace: true, preserveScroll: true });
       document.getElementById(`tab-${tab}`)?.focus();
+      return;
+    }
+
+    const pathEl = closestFromEvent(e, "[data-pathway]");
+    if (pathEl instanceof HTMLElement) {
+      e.preventDefault();
+      const id = pathEl.getAttribute("data-pathway") || "";
+      if (currentRoute.raw !== "teaching/start") go("teaching/start");
+      requestAnimationFrame(() => {
+        setAdvisingPathway(id);
+        scrollToId("advising-heading");
+        document.getElementById("advising-note")?.focus();
+      });
       return;
     }
 
@@ -1175,27 +1238,8 @@ function setOpen(open: boolean): void {
 
   overlay?.addEventListener("click", () => setOpen(false));
 
-  document.querySelectorAll(".nav-item-dd").forEach((item) => {
-    const btn = item.querySelector(".nav-dd-toggle");
-    btn?.addEventListener("click", (e) => {
-      e.stopPropagation();
-      const open = btn.getAttribute("aria-expanded") === "true";
-      closeNavDropdowns();
-      if (!open) {
-        btn.setAttribute("aria-expanded", "true");
-        item.classList.add("is-open");
-      }
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    if (e.target instanceof Element && e.target.closest(".nav-dd-toggle")) return;
-    closeNavDropdowns();
-  });
-
   window.addEventListener("keydown", (e) => {
     if (e.key === "Escape") {
-      closeNavDropdowns();
       setOpen(false);
     }
     if (e.key !== "Tab" || !drawer?.classList.contains("is-open")) return;
@@ -1272,6 +1316,8 @@ function setupForms(): void {
     path.innerHTML = advisingPathways
       .map((p) => `<option value="${escapeHtml(p.id)}">${escapeHtml(p.label)}</option>`)
       .join("");
+    path.addEventListener("change", updateAdvisingHint);
+    updateAdvisingHint();
   }
 
   document.getElementById("advising-form")?.addEventListener("submit", (e) => {
@@ -1339,6 +1385,7 @@ renderCurrentCourses();
 renderLoadViz();
 renderNow();
 renderOfficeHours();
+renderStudentPrograms();
 renderImpact();
 renderPartners();
 renderResearch();

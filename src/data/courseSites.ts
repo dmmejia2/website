@@ -34,7 +34,7 @@ export interface CourseSite {
   courseId: string;
   term: string;
   overview: string;
-  /** Current unit or next meeting — the This week lead. */
+  /** Current unit or next meeting: the This week lead. */
   now: string;
   behindCue?: string;
   due: CourseDue[];
@@ -81,7 +81,7 @@ export const courseSites: CourseSite[] = [
     overview:
       "Core structures and algorithmic analysis with Python: stacks, trees, heaps, hashing, graphs, and balanced structures. This course often decides whether a student stays in the major. People arrive with widely different preparation; the work of the semester is closing that gap without leaving those who arrive furthest behind.",
     now: "Week 1 · Orientation and the cost of operations. We start with how we talk about time, then stacks and queues as the first structures you can reason about precisely.",
-    behindCue: "If arrays and Python functions still feel shaky, do the Week 1 warmup on Blackboard before the first lab—not after you are already lost in trees.",
+    behindCue: "If arrays and Python functions still feel shaky, do the Week 1 warmup on Blackboard before the first lab, not after you are already lost in trees.",
     due: [
       { title: "Syllabus quiz", date: "Posted on Blackboard" },
       { title: "Lab 1: stacks and queues", date: "Week 2" },
@@ -100,9 +100,9 @@ export const courseSites: CourseSite[] = [
       attendance: "Lectures are recorded to Blackboard. Being present still matters: this course moves fast, and recordings do not replace asking a question in the room.",
     },
     genAi:
-      "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model—mastery first, then AI as a tool used ethically, not a substitute.",
+      "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model. Mastery first, then AI as a tool used ethically, not a substitute.",
     catchUp:
-      "Data Structures is the course students fall behind in quietly. If a week did not land, come to hours that week with the specific function or trace that broke—not “I don’t get trees.” Recordings and walkthroughs are on Blackboard.",
+      "Data Structures is the course students fall behind in quietly. If a week did not land, come to hours that week with the specific function or trace that broke, not “I don’t get trees.” Recordings and walkthroughs are on Blackboard.",
     resources: [
       { label: "UTEP catalog", href: "https://catalog.utep.edu/search/?P=CS%202302" },
       { label: "Lecture recordings", note: "Posted on Blackboard after class" },
@@ -114,8 +114,8 @@ export const courseSites: CourseSite[] = [
     courseId: "cs-3195",
     term: "Fall 2026",
     overview:
-      "Junior Professional Orientation is a professional-practice course more than a coding course: how to show up, communicate, and make decisions you can stand behind. Career artifacts, ethics, internships, and workplace norms—including how (and whether) to disclose AI use on resumes and take-homes.",
-    now: "Week 1 · Why this course exists. We set expectations for professional communication and start the career-artifact sequence—not a coding lab.",
+      "Junior Professional Orientation is a professional-practice course more than a coding course: how to show up, communicate, and make decisions you can stand behind. Career artifacts, ethics, internships, and workplace norms, including how (and whether) to disclose AI use on resumes and take-homes.",
+    now: "Week 1 · Why this course exists. We set expectations for professional communication and start the career-artifact sequence, not a coding lab.",
     behindCue: "Treat this as a professional commitment, not a checkbox. Missing the early artifacts is what turns the rest of the term into catch-up.",
     due: [{ title: "Introduction and syllabus acknowledgment", date: "Posted on Blackboard" }],
     currentWeek: 1,
@@ -132,7 +132,7 @@ export const courseSites: CourseSite[] = [
       attendance: "Attendance and professional conduct are graded as they would be at work. See the syllabus.",
     },
     genAi:
-      "We talk about disclosing AI use in professional settings—resumes, take-homes, and workplace norms—not only in homework.",
+      "We talk about disclosing AI use in professional settings: resumes, take-homes, and workplace norms, not only in homework.",
     resources: [
       { label: "UTEP catalog", href: "https://catalog.utep.edu/search/?P=CS%203195" },
       { label: "Resume draft", note: "Template and rubric on Blackboard" },
@@ -147,7 +147,7 @@ export const courseSites: CourseSite[] = [
     overview:
       "A practicum, not a survey: you are expected to deliver applied software engineering in sprint cycles. Graduate students ship, reflect, and leave with professional competency signals from real work.",
     now: "Sprint 0 · Forming teams, repo hygiene, and the definition of done. You are expected to ship from Sprint 1.",
-    behindCue: "If the repo or team contract is not in place, that is the whole assignment—not a side task.",
+    behindCue: "If the repo or team contract is not in place, that is the whole assignment, not a side task.",
     due: [{ title: "Team charter and repository", date: "End of Sprint 0" }],
     currentWeek: 0,
     weekKind: "sprint",
@@ -155,7 +155,7 @@ export const courseSites: CourseSite[] = [
       { n: 0, label: "Sprint 0", dates: "Week of Aug 24", topic: "Teams, repos, definition of done" },
       { n: 1, label: "Sprint 1", dates: "Weeks of Aug 31–Sep 7", topic: "First shippable increment" },
       { n: 2, label: "Sprint 2", dates: "Weeks of Sep 14–Sep 21", topic: "Cadence, review, and retro" },
-      { n: 3, label: "Sprint 3", dates: "TBA", topic: "Next increment — dates on Blackboard" },
+      { n: 3, label: "Sprint 3", dates: "TBA", topic: "Next increment: dates on Blackboard" },
     ],
     syllabusNote: "The syllabus PDF will be posted here and on Blackboard before the first class.",
     policies: {
@@ -175,13 +175,13 @@ export const courseSites: CourseSite[] = [
     courseId: "cs-4390-5388",
     term: "Fall 2026",
     overview:
-      "Software Project Management (cross-listed CS 4390 / CS 5388): planning, estimation, risk, and leading a software project to delivery. The MSSwE curriculum is redesigned against PMI, SWEBOK, and DORA practice—business case, hybrid delivery, risk, AI governance, and change. Undergraduate and graduate sections meet together this term.",
-    now: "Term opening · Syllabus and the redesigned project-management contract: what “managing a project” means in this room—not a coding sprint.",
+      "Software Project Management (cross-listed CS 4390 / CS 5388): planning, estimation, risk, and leading a software project to delivery. The MSSwE curriculum is redesigned against PMI, SWEBOK, and DORA practice: business case, hybrid delivery, risk, AI governance, and change. Undergraduate and graduate sections meet together this term.",
+    now: "Term opening · Syllabus and the redesigned project-management contract: what “managing a project” means in this room, not a coding sprint.",
     behindCue: "Read the syllabus when it is posted. The first weeks are about how we will plan, not about catching up on code.",
     due: [],
     weeks: [
       { n: 1, dates: "TBA", topic: "Course contract and what project management is here" },
-      { n: 2, dates: "TBA", topic: "Planning and estimation — dates on Blackboard" },
+      { n: 2, dates: "TBA", topic: "Planning and estimation: dates on Blackboard" },
     ],
     syllabusNote: "The syllabus PDF will be posted here and on Blackboard before the first class.",
     policies: {
@@ -190,7 +190,7 @@ export const courseSites: CourseSite[] = [
       attendance: "Posted with the syllabus.",
     },
     genAi:
-      "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model—mastery first, then AI as a tool used ethically, not a substitute.",
+      "Identify the problem, pinpoint where you are stuck, and attempt improvement on your own before prompting a model. Mastery first, then AI as a tool used ethically, not a substitute.",
     resources: [
       { label: "UTEP catalog (CS 4390)", href: "https://catalog.utep.edu/search/?P=CS%204390" },
     ],

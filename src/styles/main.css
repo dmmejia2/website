@@ -369,103 +369,6 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
   display: none;
 }
 
-.nav-item-dd {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.nav-students-link {
-  padding-right: 0.2rem;
-}
-
-.nav-dd-toggle {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3rem;
-  font-family: var(--sans);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: var(--slate);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 0.4rem 0.45rem 0.4rem 0.15rem;
-  border-radius: var(--radius-sm);
-  transition: color 0.2s, background 0.2s;
-}
-
-.nav-dd-toggle:hover,
-.nav-dd-toggle.nav-link--active,
-.nav-dd-toggle[aria-current="page"],
-.nav-item-dd.is-open .nav-dd-toggle,
-.nav-item-dd:focus-within .nav-dd-toggle {
-  color: var(--navy);
-}
-
-.nav-dd-toggle.nav-link--active::after {
-  content: "";
-  position: absolute;
-  bottom: 3px;
-  left: 0.75rem;
-  right: 0.75rem;
-  height: 1.5px;
-  background: var(--rust);
-  border-radius: 1px;
-}
-
-.nav-dd-toggle svg {
-  transition: transform 0.2s;
-}
-
-.nav-item-dd.is-open .nav-dd-toggle svg,
-.nav-item-dd:hover .nav-dd-toggle svg,
-.nav-item-dd:focus-within .nav-dd-toggle svg {
-  transform: rotate(180deg);
-}
-
-.nav-dd {
-  display: none;
-  position: absolute;
-  top: calc(100% - 2px);
-  left: 0;
-  min-width: 13rem;
-  padding: 0.4rem;
-  margin: 0;
-  list-style: none;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-sm);
-  box-shadow: var(--shadow-hover);
-  z-index: 3;
-}
-
-.nav-item-dd.is-open .nav-dd {
-  display: block;
-}
-
-@media (min-width: 901px) {
-  .nav-item-dd:hover .nav-dd,
-  .nav-item-dd:focus-within .nav-dd {
-    display: block;
-  }
-}
-
-.nav-dd a {
-  display: block;
-  white-space: nowrap;
-}
-
-.nav-dd a:hover {
-  background: var(--surface-2);
-}
-
-.nav-dd a.nav-link--active::after {
-  display: none;
-}
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -573,46 +476,6 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
     margin-left: 0;
     margin-top: 0.75rem;
     text-align: center;
-  }
-
-  .nav-item-dd {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .nav-students-link {
-    flex: 1;
-  }
-
-  .nav-dd-toggle {
-    width: auto;
-    flex-shrink: 0;
-    justify-content: center;
-    font-size: 1rem;
-    padding: 0.75rem 0.5rem;
-  }
-
-  .nav-dd-toggle.nav-link--active::after {
-    left: 0.5rem;
-    right: auto;
-    width: 18px;
-    bottom: 0.55rem;
-  }
-
-  .nav-dd {
-    position: static;
-    flex-basis: 100%;
-    min-width: 0;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-    padding: 0 0 0.4rem 0.85rem;
-  }
-
-  .nav-dd a {
-    font-size: 0.95rem;
-    padding: 0.55rem 0.5rem;
   }
 }
 
@@ -1416,6 +1279,74 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
   color: var(--line);
 }
 
+/* ── Bio fold (home) ── */
+.bio-fold-wrap {
+  padding: 1.5rem 0 0;
+  background: var(--bg);
+}
+
+.bio-fold {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--rust);
+  border-radius: var(--radius);
+  scroll-margin-top: calc(var(--nav-h) + 0.85rem);
+}
+
+.bio-fold-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 1.4rem;
+}
+
+.bio-fold-summary::-webkit-details-marker,
+.bio-fold-summary::marker {
+  display: none;
+  content: "";
+}
+
+.bio-fold-summary:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: -2px;
+  border-radius: var(--radius);
+}
+
+.bio-fold-title {
+  font-family: var(--serif);
+  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.bio-fold-summary::after {
+  content: "";
+  flex-shrink: 0;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 1.6px solid var(--navy);
+  border-bottom: 1.6px solid var(--navy);
+  transform: rotate(45deg) translateY(-1px);
+  transition: transform 0.2s;
+}
+
+.bio-fold[open] .bio-fold-summary::after {
+  transform: rotate(225deg) translateY(-1px);
+}
+
+.bio-fold-body {
+  padding: 1.35rem 1.4rem 1.7rem;
+  border-top: 1px solid var(--line);
+}
+
+.bio-fold-body.about-layout {
+  gap: 2rem;
+}
+
 /* ── Doorways ── */
 .doorways {
   padding: 3rem 0 4.25rem;
@@ -1673,6 +1604,10 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
   top: calc(var(--nav-h) + 1rem);
 }
 
+.bio-fold .about-timeline {
+  position: static;
+}
+
 .timeline-heading {
   font-family: var(--serif);
   font-size: 1.1rem;
@@ -1730,8 +1665,7 @@ html[data-theme="dark"] .theme-toggle .icon-moon {
 
 /* ── Teaching ── */
 .philosophy,
-.program-block,
-.student-support {
+.program-block {
   margin-bottom: 2.5rem;
   max-width: 62ch;
 }
@@ -2275,32 +2209,6 @@ article.course-card:hover {
 
 .course-site .hours-card {
   max-width: 28rem;
-}
-
-.support-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.support-list li {
-  padding-left: 1rem;
-  border-left: 2px solid var(--line);
-  font-size: 0.94rem;
-  color: var(--slate);
-  font-weight: 300;
-  line-height: 1.7;
-  transition: border-color 0.2s;
-}
-
-.support-list li:hover {
-  border-left-color: var(--rust);
-}
-
-.support-list strong {
-  color: var(--ink);
-  font-weight: 600;
 }
 
 /* ── Research ── */
@@ -3391,36 +3299,89 @@ html[data-theme="dark"] .page-header::after {
   padding: 1.45rem 1.4rem;
 }
 
-/* ── Student start ── */
-.student-start {
-  margin: 0.5rem 0 2.75rem;
-  padding: 1.5rem 1.4rem 1.6rem;
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--teal);
-}
-
-.student-start-lede {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 400;
-  color: var(--slate);
-  max-width: 58ch;
-  margin-bottom: 1.15rem;
-  line-height: 1.65;
-}
-
-.student-start-grid {
+/* ── Student term desk ── */
+.term-desk {
   display: grid;
-  gap: 1.25rem;
+  gap: 2rem;
 }
 
-@media (min-width: 800px) {
-  .student-start-grid {
-    grid-template-columns: 1.2fr 0.9fr;
+@media (min-width: 900px) {
+  .term-desk {
+    grid-template-columns: minmax(0, 1.45fr) minmax(17.5rem, 0.78fr);
+    gap: 1.75rem;
     align-items: start;
   }
+
+  .term-desk-rail {
+    position: sticky;
+    top: calc(var(--nav-h) + 1rem);
+  }
+}
+
+.term-desk .current-courses {
+  margin-bottom: 0;
+}
+
+.term-desk-rail {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.term-desk-tool {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.85rem 1.05rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  color: var(--ink);
+  font-size: 0.84rem;
+  font-weight: 600;
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+}
+
+.term-desk-tool::after {
+  content: "↗";
+  font-weight: 500;
+  color: var(--teal);
+}
+
+.term-desk-tool:hover {
+  transform: translateY(-2px);
+  border-color: var(--teal);
+  background: var(--teal-pale);
+  color: var(--ink);
+}
+
+.term-desk-advising {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1.1rem 1.15rem 1.25rem;
+}
+
+.term-desk-advising .block-title {
+  margin-bottom: 0;
+  scroll-margin-top: calc(var(--nav-h) + 0.85rem);
+}
+
+.term-desk-advising .intake-form {
+  margin-top: 0.75rem;
+}
+
+.term-desk-advising .intake-row {
+  grid-template-columns: 1fr;
+}
+
+.advising-hint {
+  font-size: 0.82rem;
+  color: var(--slate);
+  font-weight: 300;
+  line-height: 1.5;
+  min-height: 2.5em;
 }
 
 .hours-card {
@@ -3460,33 +3421,79 @@ html[data-theme="dark"] .page-header::after {
   line-height: 1.55;
 }
 
-.student-jumps {
+.student-paths {
+  margin-top: 2.5rem;
+}
+
+.student-path-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.55rem;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
 }
 
-.student-jump {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 0.85rem 0.7rem;
-  background: var(--surface-2);
+@media (min-width: 700px) {
+  .student-path-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1000px) {
+  .student-path-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.student-path {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.1rem 1.1rem;
+  background: var(--surface);
   border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
   border-radius: var(--radius-sm);
-  text-decoration: none;
-  color: var(--ink);
-  font-size: 0.82rem;
-  font-weight: 600;
-  transition: transform 0.2s, border-color 0.2s, background 0.2s;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
 }
 
-.student-jump:hover {
+.student-path:hover,
+.student-path:focus-visible {
   transform: translateY(-2px);
+  box-shadow: var(--shadow);
   border-color: var(--teal);
-  background: var(--teal-pale);
+}
+
+.student-path:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 2px;
+}
+
+.student-path--static {
+  cursor: default;
+  border-left-color: var(--navy);
+}
+
+.student-path--static:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--line);
+  border-left-color: var(--navy);
+}
+
+.student-path strong {
+  font-size: 0.92rem;
+  font-weight: 600;
   color: var(--ink);
+}
+
+.student-path span {
+  font-size: 0.84rem;
+  font-weight: 300;
+  color: var(--slate);
+  line-height: 1.5;
 }
 
 /* ── Teaching load ── */

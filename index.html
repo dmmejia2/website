@@ -104,34 +104,10 @@
         <div class="nav-drawer" id="nav-drawer">
           <ul class="nav-links" id="nav-links">
             <li><a href="#home" data-page="home">Home</a></li>
-            <li class="nav-item-dd">
-              <a href="#teaching/start" data-page="teaching" class="nav-students-link">Students</a>
-              <button
-                type="button"
-                class="nav-dd-toggle"
-                id="nav-students-toggle"
-                aria-expanded="false"
-                aria-haspopup="true"
-                aria-controls="nav-students-menu"
-                aria-label="Students menu"
-              >
-                <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <path d="M2 4l4 4 4-4" />
-                </svg>
-              </button>
-              <ul class="nav-dd" id="nav-students-menu" role="menu">
-                <li role="none"><a href="#teaching/start" data-page="teaching" role="menuitem">Start here</a></li>
-                <li role="none"><a href="#teaching/start" data-page="teaching" data-scroll="current-courses" role="menuitem">Fall 2026 courses</a></li>
-                <li role="none"><a href="#teaching/start" data-page="teaching" data-scroll="advising-heading" role="menuitem">Advising</a></li>
-                <li role="none">
-                  <a href="https://attendance-tracker-live.web.app/" rel="noopener noreferrer" target="_blank" role="menuitem">Attendance Tracker</a>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#about" data-page="about">About</a></li>
+            <li><a href="#teaching/start" data-page="teaching">Students</a></li>
             <li><a href="#teaching" data-page="teaching">Teaching</a></li>
             <li><a href="#research" data-page="research">Research</a></li>
-            <li><a href="#impact" data-page="impact">Impact</a></li>
+            <li><a href="#synergy" data-page="impact">Synergistic</a></li>
             <li><a href="#cv" data-page="cv">CV</a></li>
             <li><a href="#contact" data-page="contact" class="nav-cta">Contact</a></li>
           </ul>
@@ -192,7 +168,7 @@
                 Education, Workforce &amp; Professional Development Lead, Institute for Applied AI Innovation · CAHSI Lead, GenAI in CS Education Consortium
               </p>
               <div class="hero-actions">
-                <a href="#teaching/start" class="btn btn-primary" data-page="teaching">If you’re a student, start here</a>
+                <a href="#teaching/start" class="btn btn-primary" data-page="teaching">Fall 2026 courses</a>
                 <a href="#contact" class="btn btn-ghost" data-page="contact">Get in touch</a>
               </div>
             </div>
@@ -222,12 +198,83 @@
           </div>
         </section>
 
+        <section class="bio-fold-wrap" aria-label="About me">
+          <div class="container">
+            <details class="bio-fold" id="bio-fold">
+              <summary class="bio-fold-summary">
+                <span class="bio-fold-title" id="about-heading">About me</span>
+              </summary>
+              <div class="bio-fold-body about-layout">
+                <div class="about-narrative">
+                  <p>
+                    I am an Assistant Professor of Instruction in the Department of Computer Science at The University of
+                    Texas at El Paso, in the Miguel A. Loya College of Engineering. I direct the M.S. in Software Engineering
+                    program and serve as Education, Workforce, and Professional Development Lead for the Institute for Applied
+                    AI Innovation (AAII). I am also CAHSI Lead for the GenAI in CS Education Consortium.
+                  </p>
+                  <p>
+                    Since Fall 2019 I have taught from the introductory CS sequence through graduate software engineering.
+                    I helped modernize CS1 through CS3 and built two courses from the ground up: Applied Agile Software
+                    Engineering, and Fundamentals of Financial Literacy with VISA.
+                  </p>
+                  <p>
+                    My work connects teaching, research, and workforce development. I have partnered with Google, CAHSI,
+                    and the GenAI in CS Education Consortium so students can work with current tools, mentors, and applied
+                    software engineering. I am a Co-PI on an NSF S-STEM award and a multi-year Google grant recipient.
+                    My work on generative AI in computer science education has appeared at ACM SIGCSE, ITiCSE, and IEEE
+                    Smart Cities.
+                  </p>
+                  <p>
+                    I earned my B.S., M.S., and Ph.D. in Computer Science at UTEP. Mentoring students, and building
+                    collaborations across academia, industry, and community, is a core part of the job.
+                  </p>
+                  <div class="about-tags">
+                    <span class="tag">Agile Software Development</span>
+                    <span class="tag">AI for Software Engineering</span>
+                    <span class="tag">Generative AI</span>
+                    <span class="tag">Workforce Development</span>
+                    <span class="tag">UTEP Alumnus</span>
+                  </div>
+                </div>
+                <aside class="about-timeline" aria-label="Role timeline">
+                  <h3 class="timeline-heading">Roles</h3>
+                  <ol class="timeline">
+                    <li>
+                      <span class="timeline-when">Apr 2026 – present</span>
+                      <span class="timeline-what">Program Lead · AAII AI Champions</span>
+                    </li>
+                    <li>
+                      <span class="timeline-when">Oct 2025 – present</span>
+                      <span class="timeline-what">Education, Workforce &amp; PD Lead · AAII</span>
+                    </li>
+                    <li>
+                      <span class="timeline-when">Jul 2025 – present</span>
+                      <span class="timeline-what">CAHSI Lead · GenAI in CS Education Consortium</span>
+                    </li>
+                    <li>
+                      <span class="timeline-when">Sep 2024 – present</span>
+                      <span class="timeline-what">Assistant Professor of Instruction · UTEP CS</span>
+                    </li>
+                    <li>
+                      <span class="timeline-when">Aug 2024 – present</span>
+                      <span class="timeline-what">Program Director · MSSwE</span>
+                    </li>
+                    <li>
+                      <span class="timeline-when">2020 – 2024</span>
+                      <span class="timeline-what">Visiting Assistant Professor · UTEP CS</span>
+                    </li>
+                  </ol>
+                </aside>
+              </div>
+            </details>
+          </div>
+        </section>
+
         <section class="doorways" aria-labelledby="doorways-heading">
           <div class="container">
             <div class="doorways-head">
-              <p class="eyebrow">Explore</p>
-              <h2 class="doorways-heading" id="doorways-heading">Where to begin</h2>
-              <p class="doorways-lede">Teaching, research, and program leadership — pick the path that fits.</p>
+              <h2 class="doorways-heading" id="doorways-heading">Explore</h2>
+              <p class="doorways-lede">Teaching, research, and synergistic activities.</p>
             </div>
             <div class="doorway-list">
               <a href="#teaching" class="doorway fade-up" data-page="teaching">
@@ -244,10 +291,10 @@
                 <span class="doorway-desc">IRB studies, GenAI pedagogy, and selected papers.</span>
                 <span class="doorway-arrow" aria-hidden="true">→</span>
               </a>
-              <a href="#impact" class="doorway fade-up" data-page="impact">
+              <a href="#synergy" class="doorway fade-up" data-page="impact">
                 <span class="doorway-num" aria-hidden="true">03</span>
                 <span class="doorway-audience">Partners</span>
-                <span class="doorway-title">Impact &amp; initiatives</span>
+                <span class="doorway-title">Synergistic activities</span>
                 <span class="doorway-desc">AI Champions, CAHSI, NSF S-STEM, Google, and VISA.</span>
                 <span class="doorway-arrow" aria-hidden="true">→</span>
               </a>
@@ -264,7 +311,7 @@
               <p class="eyebrow">Updates</p>
               <h2 class="page-title" id="updates-heading">Recent <em>work</em></h2>
               <p class="page-lede">
-                Conferences, programs, and studies—dated so the site is not a frozen brochure. A handful of updates a year, not a blog.
+                Conferences, programs, and studies.
               </p>
             </div>
           </div>
@@ -274,150 +321,53 @@
         </section>
       </div>
 
-      <!-- About -->
-      <div id="page-about" class="page" role="region" aria-label="About" hidden>
-        <section id="about" aria-labelledby="about-heading">
-          <div class="page-header">
-            <div class="container page-header-inner">
-              <p class="eyebrow">About</p>
-              <h2 class="page-title" id="about-heading">Assistant Professor of Instruction · <em>UTEP Computer Science</em></h2>
-              <p class="page-lede">
-                Born and raised in El Paso. B.S., M.S., and Ph.D. in Computer Science, all at UTEP—the students I teach today are students I recognize from my own path.
-              </p>
-            </div>
-          </div>
-          <div class="container section-block about-layout">
-            <div class="about-narrative fade-up">
-              <p>
-                I am an Assistant Professor of Instruction in the Department of Computer Science at The University of
-                Texas at El Paso, in the Miguel A. Loya College of Engineering. I direct the M.S. in Software Engineering
-                program, lead education and workforce work for the Institute for Applied AI Innovation—including the
-                university-wide AI Champions faculty program (24 faculty across three cohorts, including department chairs)—and
-                serve as CAHSI Lead for the GenAI in CS Education Consortium. My assigned work is teaching and service;
-                alongside it I sustain a scholarship of teaching agenda grounded in what I see in the classroom.
-              </p>
-              <p>
-                Since Fall 2019 I have taught from the introductory CS sequence through graduate software engineering.
-                In that time I contributed to modernizing the CS1 through CS3 sequence and built two courses from the
-                ground up: Applied Agile Software Engineering and Fundamentals of Financial Literacy, the latter with
-                VISA. Beginning Fall 2023 I became the sole instructor of record for CS 1301 amid a faculty shortage,
-                rather than let the department’s largest gateway course go unstaffed.
-              </p>
-              <p>
-                The questions I ask in class now inform a published research agenda: agile software engineering pedagogy
-                and generative AI in CS education at SIGCSE 2025, ITiCSE 2025, and an ITiCSE 2026 poster, with ongoing IRB
-                studies and a $4.98 million NSF S-STEM award supporting pathways for students with financial need. Closing
-                the gap between what the classroom teaches and what industry requires connects my teaching, my research,
-                and my leadership—toward genuine access to an excellent computer science education, not just a seat in a
-                classroom. As far back as Summer 2020 I led an enhanced CS1–CS3 curriculum for K-12 teachers pursuing
-                computer science certification, in partnership with CAHSI and Microsoft.
-              </p>
-              <div class="about-tags">
-                <span class="tag">Generative AI</span>
-                <span class="tag">Software Engineering</span>
-                <span class="tag">CS Education</span>
-                <span class="tag">Workforce Development</span>
-                <span class="tag">Hispanic-Serving Institution</span>
-                <span class="tag">UTEP Alumnus</span>
-              </div>
-            </div>
-            <aside class="about-timeline fade-up" aria-label="Role timeline">
-              <h3 class="timeline-heading">Roles</h3>
-              <ol class="timeline">
-                <li>
-                  <span class="timeline-when">Apr 2026 – present</span>
-                  <span class="timeline-what">Program Lead · AAII AI Champions</span>
-                </li>
-                <li>
-                  <span class="timeline-when">Oct 2025 – present</span>
-                  <span class="timeline-what">Education, Workforce &amp; PD Lead · AAII</span>
-                </li>
-                <li>
-                  <span class="timeline-when">Jul 2025 – present</span>
-                  <span class="timeline-what">CAHSI Lead · GenAI in CS Education Consortium</span>
-                </li>
-                <li>
-                  <span class="timeline-when">Sep 2024 – present</span>
-                  <span class="timeline-what">Assistant Professor of Instruction · UTEP CS</span>
-                </li>
-                <li>
-                  <span class="timeline-when">Aug 2024 – present</span>
-                  <span class="timeline-what">Program Director · MSSwE</span>
-                </li>
-                <li>
-                  <span class="timeline-when">2020 – 2024</span>
-                  <span class="timeline-what">Visiting Assistant Professor · UTEP CS</span>
-                </li>
-              </ol>
-            </aside>
-          </div>
-        </section>
-      </div>
-
       <!-- Students -->
       <div id="page-students" class="page" role="region" aria-label="Students" hidden>
         <section id="students" aria-labelledby="students-heading">
           <div class="page-header">
             <div class="container page-header-inner">
-              <p class="eyebrow">Fall 2026</p>
-              <h2 class="page-title" id="students-heading">Courses, hours &amp; <em>advising</em></h2>
-              <p class="page-lede">
-                Fall 2026 course sites, office hours, and how to reach me.
-              </p>
+              <h2 class="page-title" id="students-heading">Fall 2026</h2>
             </div>
           </div>
           <div class="container section-block">
-            <p class="eyebrow">This term</p>
-            <h3 class="section-title" id="current-courses">Current courses</h3>
-            <p class="section-lead">Open a course for the syllabus, schedule, and materials as they are posted.</p>
-            <div class="current-courses" id="current-courses-grid"></div>
-
-            <div class="student-start fade-up" id="student-start">
-              <div class="student-start-grid">
-                <aside class="hours-card" id="office-hours-card" data-office-hours aria-label="Office hours"></aside>
-                <div class="student-jumps">
-                  <a class="student-jump" href="#teaching/start" data-page="teaching" data-scroll="current-courses">Course sites</a>
-                  <a class="student-jump" href="#teaching/start" data-page="teaching" data-scroll="advising-heading">Advising form</a>
-                  <a class="student-jump" href="https://attendance-tracker-live.web.app/" rel="noopener noreferrer" target="_blank">Attendance Tracker</a>
-                  <a class="student-jump" href="#contact" data-page="contact">Email</a>
-                </div>
+            <div class="term-desk">
+              <div class="term-desk-courses">
+                <h3 class="section-title" id="current-courses">Current courses</h3>
+                <p class="section-lead">Open a course for the syllabus, schedule, and materials.</p>
+                <div class="current-courses" id="current-courses-grid"></div>
               </div>
-            </div>
-
-            <div class="student-support fade-up" id="advising">
-              <h3 class="block-title" id="advising-heading">Advising and student pathways</h3>
-              <ul class="support-list">
-                <li>
-                  <strong>Fast Track</strong>: Combined B.S./M.S. pathway; advising on planning and applications.
-                </li>
-                <li>
-                  <strong>MSSwE / graduate advising</strong>: Program questions for Software Engineering; also MSCS / MSDIS coordination.
-                </li>
-                <li>
-                  <strong>TA, IA &amp; Peer Leader roles</strong>: Hiring and assignments for the department’s instructional student staff each term.
-                </li>
-                <li>
-                  <strong>Coding Interview Club</strong>: Faculty advisor (SEL Center).
-                </li>
-                <li>
-                  <strong>CodePath</strong>: Campus liaison for industry-aligned technical courses and career preparation.
-                </li>
-                <li>
-                  <strong>Research mentoring</strong>: Currently one Master’s student and six undergraduate researchers, plus about 30 students advised each semester.
-                </li>
-              </ul>
-              <form class="intake-form" id="advising-form">
-                <p class="intake-label">Don’t invent the ask—pick a path and I’ll get a prefilled email.</p>
-                <div class="intake-row">
-                  <label class="visually-hidden" for="advising-path">Pathway</label>
-                  <select id="advising-path" name="pathway" required></select>
-                  <label class="visually-hidden" for="advising-name">Your name</label>
-                  <input id="advising-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+              <aside class="term-desk-rail" aria-label="Hours and advising">
+                <div class="hours-card" id="office-hours-card" data-office-hours aria-label="Office hours"></div>
+                <a
+                  class="term-desk-tool"
+                  href="https://attendance-tracker-live.web.app/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >Attendance Tracker</a>
+                <div class="term-desk-advising" id="advising">
+                  <h3 class="block-title" id="advising-heading">Advising</h3>
+                  <form class="intake-form" id="advising-form">
+                    <p class="intake-label">Choose a topic. I’ll open an email.</p>
+                    <div class="intake-row">
+                      <label class="visually-hidden" for="advising-path">Pathway</label>
+                      <select id="advising-path" name="pathway" required aria-describedby="advising-hint"></select>
+                      <label class="visually-hidden" for="advising-name">Your name</label>
+                      <input id="advising-name" name="name" type="text" autocomplete="name" placeholder="Your name" required />
+                    </div>
+                    <p class="advising-hint" id="advising-hint" aria-live="polite"></p>
+                    <label class="visually-hidden" for="advising-note">What you need</label>
+                    <textarea id="advising-note" name="note" rows="3" placeholder="Course, term, and what you need (one or two sentences)." required></textarea>
+                    <button type="submit" class="btn btn-primary">Open email to Dr. Mejia</button>
+                  </form>
                 </div>
-                <label class="visually-hidden" for="advising-note">What you need</label>
-                <textarea id="advising-note" name="note" rows="3" placeholder="Course, term, and what you need (one or two sentences)." required></textarea>
-                <button type="submit" class="btn btn-primary">Open email to Dr. Mejia</button>
-              </form>
+              </aside>
+            </div>
+            <div class="student-paths fade-up" id="student-paths">
+              <h3 class="block-title" id="student-paths-heading">Advising and programs</h3>
+              <p class="section-lead">
+                Fast Track, graduate advising, instructional staff, and related programs.
+              </p>
+              <div class="student-path-grid" id="student-path-grid"></div>
             </div>
           </div>
         </section>
@@ -444,7 +394,7 @@
               <p>
                 The greatest impact a teacher can have is not only to teach the student, but to build the student’s own
                 capacity to succeed. My commitment began in a single class session covering for my advisor as a graduate
-                student—the joy of watching students learn from words I spoke—and that is when I knew teaching, not
+                student. The joy of watching students learn from words I spoke is when I knew teaching, not
                 industry, was where I wanted to build a career. Many of my students come from backgrounds and a culture
                 similar to my own. I know first-hand what it is like to enter a first computer science class knowing
                 nothing about the field, and to still feel there is more to learn upon completing a graduate degree. When
@@ -463,18 +413,18 @@
               <p>
                 Two components sit at the core of how I teach: engagement and humanity. Engagement through activities,
                 delivery, and sustained interaction keeps students curious. Humanity means letting students see that I am
-                still learning, making mistakes, and growing alongside them. Students learn through different modalities—visuals,
-                problem solving, storytelling, live coding, reflection—and I weave several into a session so no single group
-                is left behind. Practice is critical; the struggle of difficult material is real and necessary. My role is not
+                still learning, making mistakes, and growing alongside them. Students learn through different modalities:
+                visuals, problem solving, storytelling, live coding, and reflection. I weave several into a session so no
+                single group is left behind. Practice is critical; the struggle of difficult material is real and necessary. My role is not
                 to remove that struggle, but to make sure no student faces it alone, and that every student who leaves feels
                 prepared for what comes next.
               </p>
               <p>
                 In class I use a see-one, do-one, teach-one progression: a worked example with common pitfalls, then practice,
-                then—in select units—students teaching the idea back. I emphasize the why behind a concept, not only the how,
+                then, in select units, students teaching the idea back. I emphasize the why behind a concept, not only the how,
                 so students can adapt when the problem changes. Every lecture is recorded to Blackboard alongside walkthrough
                 videos, a practice I kept after student feedback. With generative AI, I ask students to identify the problem,
-                pinpoint where they are stuck, and attempt improvement on their own before prompting a model—mastery first,
+                pinpoint where they are stuck, and attempt improvement on their own before prompting a model. Mastery first,
                 then AI as a tool used ethically, not a substitute. Closing the classroom–industry gap drives Applied Agile
                 Software Engineering and partnerships with Google and VISA.
               </p>
@@ -492,7 +442,7 @@
               <h3 class="block-title">M.S. in Software Engineering (MSSwE)</h3>
               <p>
                 As Program Director for UTEP’s M.S. in Software Engineering, I oversee curriculum, recruitment, academic
-                planning, and accreditation preparation—including a broader program redesign now underway, with the
+                planning, and accreditation preparation, including a broader program redesign now underway, with the
                 CS 5388 Software Project Management revision already in the classroom. Admitted cohorts averaged 8.8
                 students before the directorship and 15.3 from Fall 2024 through Spring 2026; the three most recent terms
                 average 18. Students considering the graduate program or the Fast Track combined B.S./M.S. pathway should
@@ -537,13 +487,13 @@
                 agile software engineering using methods that no longer reflect how the industry actually works. It is the
                 same gap I hear from former students returning from internships: how much they had to learn on the job that
                 could have been taught, and taught well, in the classroom. Understanding how to teach industry-standard
-                practices as a core part of preparing students for professional roles—not as an afterthought—is critical.
+                practices as a core part of preparing students for professional roles, not as an afterthought, is critical.
               </p>
               <p>
                 Teaching and research inform each other continuously. That is most visible with generative AI: what I observe
                 students doing with these tools shapes the questions I ask in research, and what the research finds shapes how
                 I teach the next semester. Classroom methodologies are formalized through publications at SIGCSE and ITiCSE
-                so they can be examined and adopted more broadly—two competitively reviewed papers (ITiCSE 2025, SIGCSE 2025)
+                so they can be examined and adopted more broadly: two competitively reviewed papers (ITiCSE 2025, SIGCSE 2025)
                 and a peer-reviewed poster (ITiCSE 2026). Through CAHSI, those techniques extend across the network and the
                 CAHSI-HACU AI Readiness Consortium; partnerships with Google and VISA keep a direct line between academia and
                 industry.
@@ -576,13 +526,13 @@
         </section>
       </div>
 
-      <!-- Impact -->
-      <div id="page-impact" class="page" role="region" aria-label="Impact" hidden>
+      <!-- Synergistic -->
+      <div id="page-impact" class="page" role="region" aria-label="Synergistic activities" hidden>
         <section id="impact" aria-labelledby="impact-heading">
           <div class="page-header">
             <div class="container page-header-inner">
-              <p class="eyebrow">Impact</p>
-              <h2 class="page-title" id="impact-heading">Programs, partnerships &amp; <em>leadership</em></h2>
+              <p class="eyebrow">Synergistic</p>
+              <h2 class="page-title" id="impact-heading">Programs, partnerships &amp; <em>activities</em></h2>
               <p class="page-lede">
                 Department, campus, consortium, and industry roles that support the same students I teach.
               </p>
@@ -597,13 +547,13 @@
                 in Software Engineering, CAHSI Lead for the GenAI in CS Education Consortium, Education, Workforce &amp;
                 Professional Development Lead for the Institute for Applied AI Innovation, and related roles. Each serves
                 the same students I have taught for years, aimed at giving twenty-first-century students genuine access to
-                an excellent computer science education—not just a seat in a classroom.
+                an excellent computer science education, not just a seat in a classroom.
               </p>
               <p>
                 Standard-setting, role modeling, and direct communication define how I lead. Where it makes sense, I work
                 through initiatives with the people involved; where it does not, I delegate and trust those I have prepared.
-                I build structures that outlast a single semester—a TA hiring pipeline, an attendance-tracking tool, a
-                graduation-tracking system—so the work keeps running when I am not the one holding it. Sometimes leadership
+                I build structures that outlast a single semester: a TA hiring pipeline, an attendance-tracking tool, a
+                graduation-tracking system, so the work keeps running when I am not the one holding it. Sometimes leadership
                 is simply showing up: when a faculty shortage left CS 1301 without enough instructors, I took on sole
                 responsibility rather than let the department’s largest gateway course go understaffed.
               </p>
@@ -658,20 +608,20 @@
                 <p class="contact-headline">UTEP email &amp; <em>profiles</em></p>
                 <ul class="contact-audiences">
                   <li>
-                    <strong>Students</strong>
-                    — Course questions, MSSwE or Fast Track advising. Include course and term in the subject line—or use the form.
+                    <strong>Students.</strong>
+                    Course questions, MSSwE or Fast Track advising. Include course and term in the subject line, or use the form.
                   </li>
                   <li>
-                    <strong>Collaborators</strong>
-                    — Research partnership, IRB studies, and computing-education scholarship.
+                    <strong>Collaborators.</strong>
+                    Research partnership, IRB studies, and computing-education scholarship.
                   </li>
                   <li>
-                    <strong>Partners</strong>
-                    — Industry or consortium conversations around curriculum, workforce, and GenAI readiness.
+                    <strong>Partners.</strong>
+                    Industry or consortium conversations around curriculum, workforce, and GenAI readiness.
                   </li>
                 </ul>
                 <form class="contact-form" id="contact-form">
-                  <p class="intake-label">Opens a prefilled email in your client. Nothing is stored on this site.</p>
+                  <p class="intake-label">This form opens an email. Nothing is stored here.</p>
                   <label class="field-label" for="contact-audience">I am</label>
                   <select id="contact-audience" name="audience" required></select>
                   <label class="field-label" for="contact-name">Name</label>
@@ -702,10 +652,9 @@
         <nav class="footer-nav" aria-label="Footer">
           <a href="#home" data-page="home">Home</a>
           <a href="#teaching/start" data-page="teaching">Students</a>
-          <a href="#about" data-page="about">About</a>
           <a href="#teaching" data-page="teaching">Teaching</a>
           <a href="#research" data-page="research">Research</a>
-          <a href="#impact" data-page="impact">Impact</a>
+          <a href="#synergy" data-page="impact">Synergistic</a>
           <a href="#cv" data-page="cv">CV</a>
           <a href="#contact" data-page="contact">Contact</a>
         </nav>
