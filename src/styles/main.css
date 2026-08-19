@@ -1915,6 +1915,14 @@ article.course-card:hover {
   padding-bottom: 0;
 }
 
+.site-meet {
+  margin-top: 0.7rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--navy);
+  line-height: 1.5;
+}
+
 .site-jumps {
   margin-top: 1rem;
   font-size: 0.78rem;
@@ -2111,6 +2119,51 @@ article.course-card:hover {
   .week-note {
     grid-column: 1;
   }
+}
+
+.grading-block {
+  margin: 0.85rem 0 1.35rem;
+}
+
+.grading-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 0.25rem;
+}
+
+.grading-list {
+  list-style: none;
+}
+
+.grading-list li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.2rem 1.1rem;
+  align-items: baseline;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.grading-label {
+  font-size: 0.95rem;
+  color: var(--ink);
+}
+
+.grading-pct {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+}
+
+.grading-note {
+  font-size: 0.88rem;
+  color: var(--slate);
+  line-height: 1.55;
+  margin-top: 0.65rem;
 }
 
 .policy-list {

@@ -361,9 +361,27 @@ function renderCourseSite(id: string, tab: CourseTabId = "this-week"): void {
         .join("")}</ol>`
     : `<p class="site-fallback">${escapeHtml(site.blackboardNote ?? "Weekly schedule on Blackboard.")}</p>`;
 
+  const meetHtml = site.meet ? `<p class="site-meet">${escapeHtml(site.meet)}</p>` : "";
+
   const syllabusLink = site.syllabusHref
     ? extLink(site.syllabusHref, "Syllabus (PDF)", "")
     : `<p class="site-fallback">${escapeHtml(site.syllabusNote ?? "Link forthcoming.")}</p>`;
+
+  const gradingHtml = site.grading?.length
+    ? site.grading
+        .map((block) => {
+          const title = block.title ? `<h4 class="grading-title">${escapeHtml(block.title)}</h4>` : "";
+          const rows = `<ul class="grading-list">${block.rows
+            .map(
+              (r) =>
+                `<li><span class="grading-label">${escapeHtml(r.label)}</span><span class="grading-pct">${escapeHtml(r.pct)}</span></li>`,
+            )
+            .join("")}</ul>`;
+          const note = block.note ? `<p class="grading-note">${escapeHtml(block.note)}</p>` : "";
+          return `<div class="grading-block">${title}${rows}${note}</div>`;
+        })
+        .join("")
+    : "";
 
   const policyBits = [
     site.policies.late ? ["Late work", site.policies.late] : null,
@@ -418,6 +436,7 @@ function renderCourseSite(id: string, tab: CourseTabId = "this-week"): void {
           <p class="eyebrow">${escapeHtml(site.term)}</p>
           <h2 class="page-title" id="course-site-title">${escapeHtml(course.code)} · <em>${escapeHtml(title)}</em></h2>
           <p class="page-lede">${escapeHtml(site.overview)}</p>
+          ${meetHtml}
           <p class="site-jumps">${bbJump}${catJump ? ` · ${catJump}` : ""} · ${mailJump}</p>
         </div>
         <div class="site-tabbar">
@@ -442,6 +461,7 @@ function renderCourseSite(id: string, tab: CourseTabId = "this-week"): void {
         <div class="site-panel" id="panel-syllabus" role="tabpanel" data-tab-panel="syllabus" aria-labelledby="tab-syllabus" hidden>
           <h3 class="block-title">Syllabus</h3>
           ${syllabusLink}
+          ${gradingHtml ? `<h3 class="block-title">Grading</h3>${gradingHtml}` : ""}
           ${policiesHtml}
           ${
             site.genAi

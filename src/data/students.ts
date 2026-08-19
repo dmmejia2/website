@@ -16,9 +16,9 @@ export interface AdvisingPathway {
 
 export const officeHours: OfficeHours = {
   term: "Fall 2026",
-  status: "By appointment · hours on Blackboard",
-  location: "Computer Science · UTEP",
-  note: "Office hours are posted on each course Blackboard. Email with your course code and term, or use the advising form. Include what you need so we can use the time well.",
+  status: "M 9–10:30am · W 9–11am · or by appointment",
+  location: "CCSB 3.1018",
+  note: "Email with your course code and term, or use the advising form. Include what you need so we can use the time well.",
 };
 
 export const advisingPathways: AdvisingPathway[] = [
